@@ -8,18 +8,20 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LibraryComponent } from './components/library/library.component';
 import { ROUTES, RouterModule } from '@angular/router';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SigninComponent,
     SignupComponent,
-    LibraryComponent
+    LibraryComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FontAwesomeModule,
     
   ],
   providers: [],
