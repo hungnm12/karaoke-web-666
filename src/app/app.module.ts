@@ -9,6 +9,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LibraryComponent } from './components/library/library.component';
 import { ROUTES, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UserComponent } from './components/user/user.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SigninComponent,
     SignupComponent,
     LibraryComponent,
+    UserComponent,
+  
     
   ],
   imports: [
