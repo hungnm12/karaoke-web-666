@@ -105,8 +105,9 @@ section .footer{
   transition: 0.4s;
   margin-bottom: 0;
   border-radius: 0;
- 
-
+  justify-content: space-around;
+  display: flex;
+  
 }
 
 div{
@@ -120,6 +121,7 @@ div{
   outline: none;
   cursor: pointer;
   text-align: center;
+ 
   
 }
 .menu-bar{
@@ -132,7 +134,7 @@ p{
 
 /* button */
 .button1 {
-    background-image: linear-gradient(135deg, #008aff, #86d472);
+    background-image: linear-gradient(135deg, #7bdff2, #f2b5d4);
     border-radius: 6px;
     box-sizing: border-box;
     color: #ffffff;
@@ -154,7 +156,7 @@ p{
   
   .button1 .btn1 {
     align-items: center;
-    background: #0e0e10;
+    background: #003366;
     border-radius: 6px;
     display: flex;
     justify-content: center;
