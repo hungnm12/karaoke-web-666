@@ -10,6 +10,7 @@ import { LibraryComponent } from './components/library/library.component';
 import { ROUTES, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserComponent } from './components/user/user.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { UserComponent } from './components/user/user.component';
     SignupComponent,
     LibraryComponent,
     UserComponent,
+    HeaderComponent,
   
     
   ],
