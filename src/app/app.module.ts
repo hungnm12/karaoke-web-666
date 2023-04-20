@@ -12,6 +12,9 @@ import { ROUTES, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserComponent } from './components/user/user.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SingpageComponent } from './components/singpage/singpage.component';
+import { DisplaysongsComponent } from './components/displaysongs/displaysongs.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { HeaderComponent } from './components/header/header.component';
     LibraryComponent,
     UserComponent,
     HeaderComponent,
+    SingpageComponent,
+    DisplaysongsComponent,
+    AboutusComponent,
     
   ],
   imports: [

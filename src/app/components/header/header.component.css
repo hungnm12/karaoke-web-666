@@ -27,7 +27,13 @@ header{
     
 }
 
-
+img {
+    
+    width: 100%;
+}
+img .home-img {
+    width: 60px;
+}
 .navbar{
     display: flex;
     justify-content: space-between;
