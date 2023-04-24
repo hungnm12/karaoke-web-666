@@ -59,6 +59,7 @@ img .home-img {
     padding: 6px;
     border: none;
     font-size: 17px;
+    /* background: #fff; */
 }
 .search-box input{
     padding: 10px;
@@ -77,6 +78,29 @@ img .home-img {
     font-size: 1rem;
     font-weight: 500;
 }
+
+/* add 24/04 */
+.search-box .autocom-box{
+    padding: 10px 8px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+.autocom-box li{
+    list-style: none;
+    padding: 8px 12px;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+    /* opacity: 0; */
+    pointer-events: none;
+    /* display: none; */
+}
+.autocom-box li:hover{
+    background: #efefef;
+}
+/*end add*/
+
+
 .nav-bar{
     display: flex;
     
