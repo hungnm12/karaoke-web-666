@@ -14,25 +14,27 @@ public class RecordingService {
   @Autowired
   private RecordingRepository recordingRepository;
 
-//  private MediaRecorder mediaRecorder;
+  private MediaRecorder mediaRecorder;
   private ByteArrayOutputStream byteArrayOutputStream;
 
-//  public void startRecording() throws IOException {
-//    if (mediaRecorder != null) {
-//      throw new IllegalAccessError("Recording already in process");
-//    }
+  public void startRecording() throws IOException {
+    if (mediaRecorder != null) {
+      throw new IllegalAccessError("Recording already in process");
+    }
 
-//    mediaRecorder = new MediaRecorder();
+    mediaRecorder = new MediaRecorder();
 
-//    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-//    mediaRecorder.setOutputFile(outputStream.getFD());
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    mediaRecorder.setOutputFile(outputStream.getFD());
 
-//    mediaRecorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
-//    mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
-//    mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+    mediaRecorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
+    mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+    mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
 
-//    mediaRecorder.prepare();
-//    mediaRecorder.start();
+    mediaRecorder.prepare();
+    mediaRecorder.start();
   }
 
+
+}
 
