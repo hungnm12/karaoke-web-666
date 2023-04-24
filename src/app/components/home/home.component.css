@@ -14,12 +14,12 @@
 body {
     font-family: Arial;
     background-image: url(../../../assets/imgs/imgtest.png);
-    height: calc(100vh - 74px);
+    height: 100%;
     padding-top: 0;
-    width: 100%;
+    width:  100%;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin-top: 74px;
+    margin-top: 14px;
     display: flex;
   }
   
