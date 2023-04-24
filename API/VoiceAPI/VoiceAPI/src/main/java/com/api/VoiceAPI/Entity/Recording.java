@@ -12,16 +12,19 @@ public class Recording {
   private long id;
 
   @Column(nullable = false)
-  private String filename;
+  private String name;
 
-  @Lob
-  private byte[] content;
+  @Column(nullable = false)
+  private String format;
 
+  @Column(nullable = false)
+  private Long duration;
 
-  public Recording(long id, String filename, byte[] content) {
+  public Recording(long id, String name, String format, Long duration) {
     this.id = id;
-    this.filename = filename;
-    this.content = content;
+    this.name = name;
+    this.format = format;
+    this.duration = duration;
   }
 
   public Recording() {
@@ -35,19 +38,27 @@ public class Recording {
     this.id = id;
   }
 
-  public String getFilename() {
-    return filename;
+  public String getName() {
+    return name;
   }
 
-  public void setFilename(String filename) {
-    this.filename = filename;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public byte[] getContent() {
-    return content;
+  public String getFormat() {
+    return format;
   }
 
-  public void setContent(byte[] content) {
-    this.content = content;
+  public void setFormat(String format) {
+    this.format = format;
+  }
+
+  public Long getDuration() {
+    return duration;
+  }
+
+  public void setDuration(Long duration) {
+    this.duration = duration;
   }
 }
