@@ -18,7 +18,7 @@ body {
     padding-top: 0;
     width: 100%;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
     margin-top: 74px;
     display: flex;
   }
@@ -28,15 +28,7 @@ body {
    border: 1px solid black;
   }
   
-  /* .left {
-    left: 0;
-    
-  }
   
-  .right {
-    right: 0;
- 
-  } */
   
   .centered {
     position: absolute;

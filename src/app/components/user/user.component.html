@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="user.component.css">
-    <title>Document</title>
-</head>
 
 
-<app-header></app-header>
+
+
 
 
 
@@ -34,7 +26,7 @@
         <!--Navbar-->
     
         <nav>
-            <form>
+            <form *ngIf="!isEdit"  href="javascript:void(0)" (click)="onEdit()">
                 <p>Name:</p>
                 <div class="menu-bar">Home</div>
                 <p>Email:</p>
@@ -43,11 +35,24 @@
                 <div   class="menu-bar">Library</div>
             
             </form>
+
+
+            <form *ngIf="isEdit">
+                <p>Name:</p>
+                <input class="menu-bar" placeholder="Name">
+                
+                <p>Email:</p>
+                <input  class="menu-bar" placeholder="Email">
+                <p>Tele:</p>
+                <input   class="menu-bar" placeholder="Telephone">
+            </form>
         </nav>
-        <div class="footer">
-            <a class="button1" routerLink="/signin"><span class="btn1">Log out</span></a>
-            <a class="button1" href=""><span class="btn1">Edit</span></a>
+        <div class="footer" *ngIf="!isEdit" >
+            <a class="button1" routerLink="/singpage"><span class="btn1">Log out</span></a>
+            <a class="button1"  href="javascript:void(0)" (click)="onEdit()"><span class="btn1">Edit</span></a>
+        </div>
+        <div class="footer" *ngIf="isEdit">
+            <a class="button1"  href="javascript:void(0)"><span class="btn1">Save</span></a>
         </div>
     </section>
 </body>
-</html>
