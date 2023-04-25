@@ -18,6 +18,9 @@ public class Recording {
   private String format;
 
   @Column(nullable = false)
+  private String filePath;
+
+  @Column(nullable = false)
   private Long duration;
 
   public Recording(long id, String name, String format, Long duration) {
@@ -25,6 +28,7 @@ public class Recording {
     this.name = name;
     this.format = format;
     this.duration = duration;
+    this.filePath = filePath;
   }
 
   public Recording() {
@@ -60,5 +64,13 @@ public class Recording {
 
   public void setDuration(Long duration) {
     this.duration = duration;
+  }
+
+  public String getFilePath() {
+    return filePath;
+  }
+
+  public void setFilePath(String filePath) {
+    this.filePath = filePath;
   }
 }
