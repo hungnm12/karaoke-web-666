@@ -15,7 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SingpageComponent } from './components/singpage/singpage.component';
 import { DisplaysongsComponent } from './components/displaysongs/displaysongs.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
-import { GernesComponent } from './gernes/gernes.component';
+import { GernesComponent } from './components/gernes/gernes.component';
 
 @NgModule({
   declarations: [
