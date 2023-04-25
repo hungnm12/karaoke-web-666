@@ -79,26 +79,7 @@ img .home-img {
     font-weight: 500;
 }
 
-/* add 24/04 */
-.search-box .autocom-box{
-    padding: 10px 8px;
-    max-height: 280px;
-    overflow-y: auto;
-}
-.autocom-box li{
-    list-style: none;
-    padding: 8px 12px;
-    width: 100%;
-    cursor: default;
-    border-radius: 3px;
-    /* opacity: 0; */
-    pointer-events: none;
-    /* display: none; */
-}
-.autocom-box li:hover{
-    background: #efefef;
-}
-/*end add*/
+
 
 
 .nav-bar{
