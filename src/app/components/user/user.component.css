@@ -1,0 +1,188 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root{
+  --sideBGColor:#040b14 ;
+  --themeColor:#00A78E ;
+  --iconBGColor: #2C2F3F;
+  --textColor: #525252;
+  --bgColor: #F7F7F7;
+
+}
+section{
+  
+  height: 100%;
+  width: 20%;
+  padding: 15px 30px;
+  background-color:  #454C92;;
+  overflow-y: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: 0.4s;
+  z-index: 99;
+  margin-top: 74px;
+}
+section .profile{
+  text-align: center;
+  margin: 10px 0;
+}
+section .profile img{
+  width: 150px;
+  border-radius: 50%;
+  border: 10px solid var(--iconBGColor);
+}
+section .profile h1{
+  color: white;
+  font-weight: 600;
+}
+
+section .profile .social-icons a{
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-align: center;
+  line-height:  37px;
+  background-color: var(--iconBGColor);
+  color: white;
+  font-size: 18px;
+  margin: 1.5px;
+  transition: 0.4s;
+}
+
+section .profile .social-icons a:hover{
+  background-color: var(--themeColor);
+}
+
+section nav{
+  margin-top: 30px;
+}
+section nav ul li{
+  list-style: none;
+  color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: green;
+    outline: none;
+    cursor: pointer;
+}
+section nav ul li a{
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 10px;
+  margin: 7px 0;
+  color: lightgrey;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.6px;
+}
+
+section .footer{
+  text-align: center;
+  background-color: var(--sideBGColor);
+  width: 20%;
+  color: lightgray;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  transition: 0.4s;
+  margin-bottom: 0;
+  border-radius: 0;
+  justify-content: space-around;
+  display: flex;
+  
+}
+
+div{
+  color: black;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+ 
+  
+}
+input{
+  color: black;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+ 
+}
+.menu-bar{
+  background-color: #f2d2fe;
+}
+
+p{
+  color: white;
+}
+
+/* button */
+.button1 {
+    background-image: linear-gradient(135deg, #7bdff2, #f2b5d4);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: inline-block;
+    height: 40px;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 4px;
+    position: relative;
+    text-decoration: none;
+    width: 5em;
+    z-index: 2;
+    justify-content: space-between center;
+  }
+  
+  .button1:hover {
+    color: #fff;
+  }
+  
+  .button1 .btn1 {
+    align-items: center;
+    background: #003366;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+  }
+  
+  .button1:hover .btn1 {
+    background: transparent;
+  }
+
+
+
+
+

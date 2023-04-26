@@ -1,0 +1,58 @@
+
+
+
+
+
+
+
+
+
+<app-header></app-header>
+ <body>
+   
+    <section>
+        <!--menu card-->
+        <div class="profile">
+            <img src="../../../assets/imgs/Userimg.png" alt="" width="150px">
+            <h1>Mah Nigero</h1>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=100014144444020"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100014144444020"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100014144444020"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100014144444020"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+
+        <!--Navbar-->
+    
+        <nav>
+            <form *ngIf="!isEdit"  href="javascript:void(0)" (click)="onEdit()">
+                <p>Name:</p>
+                <div class="menu-bar">Home</div>
+                <p>Email:</p>
+                <div  class="menu-bar">About</div>
+                <p>Tele:</p>
+                <div   class="menu-bar">Library</div>
+            
+            </form>
+
+
+            <form *ngIf="isEdit">
+                <p>Name:</p>
+                <input class="menu-bar" placeholder="Name">
+                
+                <p>Email:</p>
+                <input  class="menu-bar" placeholder="Email">
+                <p>Tele:</p>
+                <input   class="menu-bar" placeholder="Telephone">
+            </form>
+        </nav>
+        <div class="footer" *ngIf="!isEdit" >
+            <a class="button1" routerLink="/singpage"><span class="btn1">Log out</span></a>
+            <a class="button1"  href="javascript:void(0)" (click)="onEdit()"><span class="btn1">Edit</span></a>
+        </div>
+        <div class="footer" *ngIf="isEdit">
+            <a class="button1"  href="javascript:void(0)"><span class="btn1">Save</span></a>
+        </div>
+    </section>
+</body>
