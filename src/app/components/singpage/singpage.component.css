@@ -70,4 +70,18 @@
     color: rgb(96, 96, 96);
     font-size: 12px;
   }
+ 
+ .active {
+    background: #e5e5e5;
+ }
+ hr {
+  height: 1px;
+  background-color: #e5e5e5;
+  border: none;
+}
+
+
+button {
   
+  color: aqua;
+}
