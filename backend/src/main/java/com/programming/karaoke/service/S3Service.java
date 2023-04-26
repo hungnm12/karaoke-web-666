@@ -6,7 +6,6 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.StringUtils;
 import org.springframework.stereotype.Service;
@@ -20,7 +19,7 @@ import java.util.UUID;
 //@RequiredArgsConstructor
 public class S3Service implements FileService{
     public static final String BUCKET_NAME = "bedan";
-    private  AmazonS3Client amazonS3Client;
+    private final AmazonS3Client amazonS3Client;
 
     public S3Service(AmazonS3Client amazonS3Client) {
         this.amazonS3Client = amazonS3Client;
@@ -40,7 +39,7 @@ public class S3Service implements FileService{
 //        Ví dụ, nếu UUID được tạo ra là d8b3a5a5-5a5d-47b1-a8d6-847b0c2a72f2, và
 //        phần mở rộng của tên tập tin là .jpg,
 //        thì giá trị của biến s sẽ là d8b3a5a5-5a5d-47b1-a8d6-847b0c2a72f2.jpg.
-     String key = UUID.randomUUID().toString()+"." + fileNameExtension;
+     String key = UUID.randomUUID()+"." + fileNameExtension;
 
 //     Objectmetadata là 1 lớp trong awa sdk -> quản lí thông tin lquan đến 1 đối tượng (kkichs thước , loại content, mã hoa ,...)
      var metadata = new ObjectMetadata();
