@@ -16,6 +16,9 @@ import { SingpageComponent } from './components/singpage/singpage.component';
 import { DisplaysongsComponent } from './components/displaysongs/displaysongs.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { GernesComponent } from './components/gernes/gernes.component';
+import { UploadVideoComponent } from './components/upload-video/upload-video.component';
+import { FormsModule } from '@angular/forms';
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,17 @@ import { GernesComponent } from './components/gernes/gernes.component';
     DisplaysongsComponent,
     AboutusComponent,
     GernesComponent,
+    UploadVideoComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NgxFileDropModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
