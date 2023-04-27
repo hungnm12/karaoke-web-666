@@ -19,7 +19,7 @@ import { GernesComponent } from './components/gernes/gernes.component';
 import { UploadVideoComponent } from './components/upload-video/upload-video.component';
 import { FormsModule } from '@angular/forms';
 import { NgxFileDropModule } from 'ngx-file-drop';
-
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +35,7 @@ import { NgxFileDropModule } from 'ngx-file-drop';
     GernesComponent,
     UploadVideoComponent,
     
+    
   ],
   imports: [
     BrowserModule,
@@ -42,8 +43,8 @@ import { NgxFileDropModule } from 'ngx-file-drop';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    NgxFileDropModule
-
+    NgxFileDropModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
