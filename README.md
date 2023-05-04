@@ -1,3 +1,35 @@
+
+
+
+Karaoke Practice Website
+This is a web application designed to help users practice their singing skills by singing along with their favorite karaoke tracks. The application is built using Angular for the front-end, Java Spring for the back-end, and My SQL for the database.
+
+Features
+Search for karaoke tracks by title, artist, or genre
+Play karaoke tracks and sing along with lyrics highlighted in real-time
+Record and save user singing performances
+Rate and review karaoke tracks
+Create and manage playlists
+Getting Started
+To run the application locally, follow these steps:
+
+Clone the repository to your local machine
+Install the necessary dependencies by running npm install in the karaoke-practice-website/angular directory
+Start the Angular development server by running ng serve in the karaoke-practice-website/angular directory
+Install and set up My SQL database on your machine
+Run the Java Spring application by running mvn spring-boot:run in the karaoke-practice-website/backend directory
+Open your browser and navigate to http://localhost:4200 to use the application
+Contributing
+Contributions to this project are welcome. If you have an idea for a feature or find a bug, please create a new issue on the project's GitHub page. If you would like to contribute code, please fork the repository and create a pull request with your changes.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for more information.
+
+
+
+
+
+
 # KaraokePracticeWebsite
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
