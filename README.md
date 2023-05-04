@@ -1,7 +1,14 @@
 
 
 
-Karaoke Practice Website
+
+
+
+
+
+
+# KaraokePracticeWebsite
+
 This is a web application designed to help users practice their singing skills by singing along with their favorite karaoke tracks. The application is built using Angular for the front-end, Java Spring for the back-end, and My SQL for the database.
 
 Features
@@ -28,9 +35,6 @@ This project is licensed under the MIT License. See the LICENSE file for more in
 
 
 
-
-
-# KaraokePracticeWebsite
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
