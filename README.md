@@ -29,19 +29,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## BACKEND
 
-#Technologies
+## Technologies
 Java
 Spring Framework
 MySQL
 Maven
 
-#Prerequisites
+## Prerequisites
 
 Java 17 
 MySQL 8.0.31
 Maven 3.9.1
 
-#Installation
+## Installation
 1.Clone the repository:
 2.Update the application.properties file with your database credentials:
 
