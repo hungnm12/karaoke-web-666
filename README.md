@@ -25,3 +25,29 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+#BACKEND
+
+#Technologies
+Java
+Spring Framework
+MySQL
+Maven
+
+#Prerequisites
+
+Java 17 
+MySQL 8.0.31
+Maven 3.9.1
+
+#Installation
+1.Clone the repository:
+2.Update the application.properties file with your database credentials:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/<database-name>?useSSL=false
+spring.datasource.username=<database-username>
+spring.datasource.password=<database-password>
+  
+3.Build the application using Maven:
+mvn clean install
