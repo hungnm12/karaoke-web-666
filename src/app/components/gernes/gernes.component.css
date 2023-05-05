@@ -4,18 +4,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
 
   body {
     font-family: 'Roboto', sans-serif;
+    
   }
 
   main {
     height: calc(100vh - 74px);
+    
     display: flex;
     background-color: #f9f9f9;
     margin-top: 60px;
-    padding-right: 100%;
+    /* padding-right: 100%; */
     
     
   }
