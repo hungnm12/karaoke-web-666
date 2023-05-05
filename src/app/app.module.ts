@@ -20,6 +20,7 @@ import { UploadVideoComponent } from './components/upload-video/upload-video.com
 import { FormsModule } from '@angular/forms';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import {MatButtonModule} from '@angular/material/button';
+import { RecordbuttonComponent } from './components/recordbutton/recordbutton.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import {MatButtonModule} from '@angular/material/button';
     AboutusComponent,
     GernesComponent,
     UploadVideoComponent,
+    RecordbuttonComponent,
     
     
   ],

@@ -16,6 +16,6 @@ export class VideoService {
     
     
     
-    return this.httpClient.post("http://localhost:8080/api/video/ng ", formData);
+    return this.httpClient.post("http://localhost:8002/api/video/ng ", formData);
   }
 }
