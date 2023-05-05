@@ -20,7 +20,7 @@
             </tbody>
         </table>
     </div>
-    <button mat-button *ngIf="fileUploaded">
+    <button mat-button (click)="uploadVideo()" *ngIf="fileUploaded">
         Upload Video
     </button>
 </div>
