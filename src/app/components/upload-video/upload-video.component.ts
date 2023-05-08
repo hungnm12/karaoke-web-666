@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 import { VideoService } from 'src/app/services/video services/video.service';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-upload-video',
   templateUrl: './upload-video.component.html',
@@ -29,21 +29,21 @@ export class UploadVideoComponent {
           // Here you can access the real file
           console.log(droppedFile.relativePath, file);
           this.fileUploaded = true;
-          /**
+          
           // You could upload it like this:
           const formData = new FormData()
-          formData.append('logo', file, relativePath)
+          formData.append('logo',file, rela)
 
           // Headers
           const headers = new HttpHeaders({
             'security-token': 'mytoken'
           })
 
-          this.http.post('https://mybackend.com/api/upload/sanitize-and-save-logo', formData, { headers: headers, responseType: 'blob' })
+          this.http.post('https://8002/api/upload', formData, { headers: headers, responseType: 'blob' })
           .subscribe(data => {
-            // Sanitized logo returned from backend
+            
           })
-          **/
+          
 
         });
       } else {
