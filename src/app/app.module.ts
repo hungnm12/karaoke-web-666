@@ -16,7 +16,7 @@ import { SingpageComponent } from './components/singpage/singpage.component';
 import { DisplaysongsComponent } from './components/displaysongs/displaysongs.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { GernesComponent } from './components/gernes/gernes.component';
-import { UploadVideoComponent } from './components/upload-video/upload-video.component';
+
 import { FormsModule } from '@angular/forms';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import {MatButtonModule} from '@angular/material/button';
@@ -34,7 +34,7 @@ import { RecordbuttonComponent } from './components/recordbutton/recordbutton.co
     DisplaysongsComponent,
     AboutusComponent,
     GernesComponent,
-    UploadVideoComponent,
+   
     RecordbuttonComponent,
     
     
