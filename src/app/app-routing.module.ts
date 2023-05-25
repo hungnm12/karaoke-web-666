@@ -6,7 +6,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LibraryComponent } from './components/library/library.component';
 import { UserComponent } from './components/user/user.component';
 import { SingpageComponent } from './components/singpage/singpage.component';
-import { UploadVideoComponent } from './components/upload-video/upload-video.component';
+
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 const routes: Routes = [
@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'library', component: LibraryComponent},
   {path: 'user', component: UserComponent},
   {path: 'singpage', component: SingpageComponent},
-  {path: 'upload-video', component: UploadVideoComponent},
+ 
   {path: 'aboutus', component: AboutusComponent}
 
   
