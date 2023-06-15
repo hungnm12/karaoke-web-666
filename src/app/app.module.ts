@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import {MatButtonModule} from '@angular/material/button';
 import { RecordbuttonComponent } from './components/recordbutton/recordbutton.component';
+import { CommonInterceptor } from './Interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,11 @@ import { RecordbuttonComponent } from './components/recordbutton/recordbutton.co
     NgxFileDropModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [
+     {
+      provide: HTTP_INTERCEPTORS, useClass: CommonInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
