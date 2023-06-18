@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RecordingService } from './recording.service';
 
 import 'webrtc-adapter';
 @Component({
@@ -46,4 +47,50 @@ export class RecordbuttonComponent {
   //     this.mediaStream.getTracks().forEach((track) => track.stop());
   //   });
   // }
+
+
+  constructor(private recordingService: RecordingService) {}
+
+  createRecording() {
+    const inputElement = document.createElement('input');
+    inputElement.type = 'file';
+    inputElement.accept = '.wav'; // Modify the accepted file type as per your requirement
+
+    inputElement.addEventListener('change', (event: any) => {
+      const file = event.target.files[0];
+      this.recordingService.createRecording(file).subscribe(
+        () => {
+          console.log('Recording created successfully!');
+          // Handle success, such as displaying a success message or refreshing the recording list
+        },
+        (error) => {
+          console.error('Error creating recording:', error);
+          // Handle error, such as displaying an error message
+        }
+      );
+    });
+
+    inputElement.click();
+  }
+
+  playRecording() {
+    const id = prompt('Enter recording ID:');
+    if (id) {
+      this.recordingService.playRecording(id).subscribe(
+        (response: Blob) => {
+          const url = URL.createObjectURL(response);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = `recording_${id}.mp3`; // Modify the filename as per your requirement
+          link.click();
+          URL.revokeObjectURL(url);
+        },
+        (error) => {
+          console.error('Error playing recording:', error);
+          // Handle error, such as displaying an error message
+        }
+      );
+    }
+  }
+
 }
