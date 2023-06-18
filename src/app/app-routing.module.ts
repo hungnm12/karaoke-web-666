@@ -9,6 +9,7 @@ import { SingpageComponent } from './components/singpage/singpage.component';
 
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { RecordbuttonComponent } from './components/recordbutton/recordbutton.component';
+import { DisplaysongsComponent } from './components/displaysongs/displaysongs.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'singpage', component: SingpageComponent},
  
   {path: 'aboutus', component: AboutusComponent},
-  {path: 'recordbutton', component: RecordbuttonComponent}
+  {path: 'recordbutton', component: RecordbuttonComponent},
+  {path: 'displaysong', component: DisplaysongsComponent}
 
 
   
