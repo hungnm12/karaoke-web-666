@@ -49,48 +49,57 @@ export class RecordbuttonComponent {
   // }
 
 
-  constructor(private recordingService: RecordingService) {}
+  constructor(private http: HttpClient) { }
 
-  createRecording() {
-    const inputElement = document.createElement('input');
-    inputElement.type = 'file';
-    inputElement.accept = '.wav'; // Modify the accepted file type as per your requirement
-
-    inputElement.addEventListener('change', (event: any) => {
-      const file = event.target.files[0];
-      this.recordingService.createRecording(file).subscribe(
-        () => {
-          console.log('Recording created successfully!');
-          // Handle success, such as displaying a success message or refreshing the recording list
-        },
-        (error) => {
-          console.error('Error creating recording:', error);
-          // Handle error, such as displaying an error message
-        }
-      );
-    });
-
-    inputElement.click();
+  private mediaRecorder: any;
+  private recordedChunks: any[] = [];
+  
+  onRecordButtonClick() {
+    navigator.mediaDevices.getUserMedia({ audio: true })
+      .then((stream) => {
+        this.mediaRecorder = new MediaRecorder(stream);
+  
+        this.mediaRecorder.addEventListener('dataavailable', (event: any) => {
+          this.recordedChunks.push(event.data);
+        });
+  
+        this.mediaRecorder.addEventListener('stop', () => {
+          const blob = new Blob(this.recordedChunks, { type: 'audio/wav' });
+  
+          const formData = new FormData();
+          formData.append('file', blob, 'recorded_audio.wav');
+          formData.append('fileDir','save_records'); // Replace 'your-file-directory' with the desired file directory
+  
+          this.http.post<any>('/createRecording', formData).subscribe(
+            (response) => {
+              console.log('Recording created successfully. ID: ' + response);
+              // Handle success, e.g., display a success message
+            },
+            (error) => {
+              console.error('Failed to create recording:', error);
+              // Handle error, e.g., display an error message
+            }
+          );
+        });
+  
+        this.mediaRecorder.start();
+      })
+      .catch((error) => {
+        console.error('Failed to access user media:', error);
+        // Handle error, e.g., display an error message
+      });
   }
-
-  playRecording() {
-    const id = prompt('Enter recording ID:');
-    if (id) {
-      this.recordingService.playRecording(id).subscribe(
-        (response: Blob) => {
-          const url = URL.createObjectURL(response);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = `recording_${id}.mp3`; // Modify the filename as per your requirement
-          link.click();
-          URL.revokeObjectURL(url);
-        },
-        (error) => {
-          console.error('Error playing recording:', error);
-          // Handle error, such as displaying an error message
-        }
-      );
+  
+  onStopButtonClick() {
+    if (this.mediaRecorder && this.mediaRecorder.state !== 'inactive') {
+      this.mediaRecorder.stop();
     }
-  }
-
+  } 
 }
+ 
+  
+  
+  
+  
+  
+  

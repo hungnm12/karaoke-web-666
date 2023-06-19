@@ -20,7 +20,5 @@ import { Observable } from 'rxjs';
         return this.http.post<any>(`${this.baseUrl}/createRecording`, formData);
       }
 
-      playRecording(id: string): Observable<any> {
-        return this.http.get(`${this.baseUrl}/${id}/play`, { responseType: 'blob' });
-      }
+      
   }

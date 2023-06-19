@@ -97,3 +97,7 @@ form p a{
 .input-group{
     height: 200px;
 }
+
+p {
+    font-weight: bold;
+}

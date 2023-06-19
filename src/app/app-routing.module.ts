@@ -21,7 +21,8 @@ const routes: Routes = [
  
   {path: 'aboutus', component: AboutusComponent},
   {path: 'recordbutton', component: RecordbuttonComponent},
-  {path: 'displaysong', component: DisplaysongsComponent}
+  {path: 'displaysong', component: DisplaysongsComponent},
+  
 
 
   

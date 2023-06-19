@@ -6,10 +6,18 @@
       <h1>Karaoke Player</h1>
     </header>
     <main>
-      <div class="player">
-        <img width="200px" height="200px" src="VinylRecord.png"  alt="img" >
-      </div>
-
+      <app-gernes></app-gernes>
+      <section id="play-song-zone">
+        <div class="player">
+          <img width="200px" height="200px" src="VinylRecord.png"  alt="img" >
+        </div>
+        <div class="footer"  >
+          <a class="button1"  ><i class="material-icons">play_arrow</i><span class="btn1"></span></a>
+         
+          <app-recordbutton></app-recordbutton>
+        </div>
+      </section>
+      
 
       <div class="lyrics">
         <h2>Song Title</h2>
@@ -18,12 +26,9 @@
           <p>Lyrics...</p>
         </div>
 
-        <div class="footer"  >
-          <a class="button1"  ><i class="material-icons">play_arrow</i><span class="btn1"></span></a>
-          <a class="button1"  ><i class="material-icons">fiber_manual_record</i><span class="btn1"></span></a>
-        </div>
+       
       </div>
-      
+      <app-displaysongs></app-displaysongs>
     </main>
   </body>
 
@@ -31,6 +36,3 @@
       
 
      
-
-<!-- <button (click)="record()">Record</button>
-<button (click)="play(1)">Play Recording #1</button> -->
