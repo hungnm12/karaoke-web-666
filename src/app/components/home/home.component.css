@@ -5,6 +5,8 @@
 *{
     font-family: 'Tilt Warp', cursive;
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     /* box-sizing: border-box; */
     scroll-padding-top: 4rem;
     scroll-behavior: smooth;
@@ -13,6 +15,7 @@
 }
 body {
     font-family: Arial;
+    background-color: aqua;
     background-image: url(../../../assets/imgs/imgtest.png);
     height: 100%;
     padding-top: 0;
