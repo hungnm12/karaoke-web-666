@@ -1,73 +1,37 @@
-@import '~@fortawesome/fontawesome-free/css/all.css';
-
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-
-* {
-    font-family: 'Tilt Warp', cursive;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-padding-top: 4rem;
-    scroll-behavior: smooth;
-    list-style: none;
-    text-decoration: none;
-}
-
-body {
-    font-family: Arial;
-    background-image: url(../../../assets/imgs/imgtest.png);
-    height: 100%;
-    padding-top: 0;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    margin-top: 14px;
-    display: flex;
-}
-
-.split {
-    flex: 1;
-    border: 1px solid black;
-}
-
-
-
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-
-.left {
-    width: 100%;
-    height: 99vh;
-}
-
-#display-song {
-    margin-top: 7vh;
+.displaysongs {
     overflow-y: auto;
     overflow-x: hidden;
-    width: 100%;
-    height: 40%;
-}
-
-.two-song {
-    display: flex;
+    width: 18vw;
+    height: 92vh;
 }
 
 .song {
-    margin: 6px;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    height: 14vh;
+    width: 17vw;
+    background-color: rgb(24, 12, 36);
     display: flex;
-    width: 50%;
-    height: 200px;
-    border: 1px solid red;
-    background-color: antiquewhite;
 }
 
-.song img {
-    width: 200px;
-    height: 200px;
+.song:hover {
+    background-color: rgb(53, 28, 77);
+}
+
+.image {
+    margin-top: 1vh;
+    margin-left: 1vh;
+    height: 12vh;
+    width: 12vh;
+}
+
+.info {
+    margin-top: 1vh;
+    margin-left: 1vh;
+    color: aliceblue;
+    font-size: 1.3rem;
+}
+
+.singer {
+    margin-top: 1vh;
 }
