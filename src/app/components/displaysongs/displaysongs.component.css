@@ -3,11 +3,12 @@
     overflow-x: hidden;
     width: 18vw;
     height: 92vh;
+    background-color: rgb(52, 36, 58);
 }
 
 .song {
     margin-top: 1vh;
-    margin-left: 1vh;
+    margin-left: 0vh;
     height: 14vh;
     width: 17vw;
     background-color: rgb(24, 12, 36);
@@ -15,7 +16,7 @@
 }
 
 .song:hover {
-    background-color: rgb(53, 28, 77);
+    background-color: rgb(81, 46, 114);
 }
 
 .image {
@@ -34,4 +35,12 @@
 
 .singer {
     margin-top: 1vh;
+    font-size: 1.1rem;
+    color: rgb(204, 182, 224);
+}
+
+.time {
+    margin-top: 0.5vh;
+    font-size: 1.1rem;
+    color: rgb(204, 182, 224);
 }
