@@ -1,3 +1,5 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
 .gernes {
   height: 92vh;
   width: 12vw;
@@ -18,7 +20,7 @@
 }
 
 .menu-list {
-  height: 50vh;
+  height: 12vh;
   width: 12vw;
 }
 
@@ -30,9 +32,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.1px solid #000000;
+
 }
 
 .menu:hover {
   background-color: rgb(183, 131, 207);
+}
+
+.help {
+  height: 72vh;
+  width: 12vw;
+  background-color: rgba(23, 15, 35, 255);
+  color: rgba(23, 15, 35, 255);
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+#help-icon {
+  margin-right: 2vw;
+  font-size: 3vh;
+  color: rgb(243, 232, 239);
 }
