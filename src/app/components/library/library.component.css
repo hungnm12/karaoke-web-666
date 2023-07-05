@@ -24,7 +24,7 @@ body {
 #video-background {
   height: 260vh;
   position: relative;
-  z-index: -4;
+  z-index: -1;
 }
 
 .display-ballad {
