@@ -92,7 +92,7 @@
 
 .name a {
     margin-top: 1vw;
-    font-size: 1.3rem;
+    font-size: 3vh;
     text-decoration: none;
 }
 
@@ -106,7 +106,7 @@
 
 .mssv span {
     margin-top: 1vh;
-    font-size: 1rem;
+    font-size: 2.3vh;
     color: red;
 }
 
@@ -121,6 +121,6 @@
     height: 22vh;
     width: 16vw;
     margin-top: 1vh;
-    font-size: 1rem;
+    font-size: 2vh;
     margin-right: 1vw;
 }
