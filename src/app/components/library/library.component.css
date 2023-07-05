@@ -1,7 +1,57 @@
-* {
-    margin: 100px;
-    padding: 100px;
-    box-sizing: border-box;
-    
-  }
- 
+.center {
+  display: flex;
+}
+
+.gernes {
+  height: 92vh;
+  width: 12vw;
+}
+
+.display-nothing {
+  height: 8vh;
+  width: 88vw;
+  background-color: rgb(40, 28, 44);
+}
+
+.display-ballad {
+  height: 24vh;
+  width: 88vw;
+  background-color: rgb(163, 45, 134);
+  display: flex;
+}
+
+.display-blue {
+  height: 24vh;
+  width: 88vw;
+  background-color: rgb(149, 179, 204);
+  display: flex;
+}
+
+.song {
+  height: 24vh;
+  width: 10vw;
+  background-color: bisque;
+  margin-right: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  height: 12vh;
+  width: 12vh;
+  background-color: black;
+  margin-left: 1vh;
+  margin-top: 1vh;
+}
+
+.image img {
+  height: 12vh;
+  width: 12vh;
+}
+
+.info {
+  height: 10vh;
+  width: 9vw;
+  background-color: rgb(185, 30, 38);
+  margin-left: 1vh;
+}
