@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 .center {
   display: flex;
 }
@@ -8,22 +11,39 @@
 }
 
 .display-nothing {
-  height: 8vh;
+  height: 0vh;
   width: 88vw;
   background-color: rgb(40, 28, 44);
 }
 
 .display-ballad {
-  height: 24vh;
+  height: 28vh;
   width: 88vw;
   background-color: rgb(163, 45, 134);
   display: flex;
+  flex-direction: column;
 }
 
 .display-blue {
-  height: 24vh;
+  height: 28vh;
   width: 88vw;
   background-color: rgb(149, 179, 204);
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  height: 4vh;
+  width: 88vw;
+
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+}
+
+.list {
   display: flex;
 }
 
@@ -31,9 +51,14 @@
   height: 24vh;
   width: 10vw;
   background-color: bisque;
-  margin-right: 4px;
+  margin-right: 0px;
+  border: 1px solid rebeccapurple;
   display: flex;
   flex-direction: column;
+}
+
+.song:hover {
+  background-color: rgb(133, 34, 95);
 }
 
 .image {
@@ -42,6 +67,7 @@
   background-color: black;
   margin-left: 1vh;
   margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 
 .image img {
@@ -52,6 +78,21 @@
 .info {
   height: 10vh;
   width: 9vw;
-  background-color: rgb(185, 30, 38);
   margin-left: 1vh;
+  font-family: 'Lato', sans-serif;
+  font-size: 2vh;
+}
+
+.singer {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 0.5vh;
+  font-size: 1.5vh;
+  color: rgb(49, 0, 41);
+}
+
+.time {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 0.3vh;
+  font-size: 1.5vh;
+  color: rgb(49, 0, 41);
 }
