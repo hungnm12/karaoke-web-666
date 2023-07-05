@@ -13,8 +13,8 @@ export class DisplaysongsComponent {
       title: 'Song 1',
       artist: 'Artist 1',
       duration: '3:30',
-      imageUrl: 'path/to/song1-image.jpg',
-      videoUrl: 'path/to/song1-video.mp4',
+      imageUrl: '../../../assets/imgs/disc1.jpg',
+      videoUrl: '../../../assets/imgs/videohome2.mp4',
     },
     {
       id: '2',
@@ -34,11 +34,11 @@ export class DisplaysongsComponent {
     },
     // Add more songs as needed
   ];
-  
-  
+
+
   selectedSong: any; // Variable to store the selected song
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   selectSong(song: any): void {
     this.router.navigate(['/song', song.id]);

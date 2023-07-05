@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .center {
   display: flex;
 }
@@ -14,6 +19,10 @@
   height: 0vh;
   width: 88vw;
   background-color: rgb(40, 28, 44);
+}
+
+#video-background {
+  height: 260vh;
 }
 
 .display-ballad {
@@ -45,6 +54,7 @@
 
 .list {
   display: flex;
+  background-color: rgba(40, 40, 40, 0.6);
 }
 
 .song {
