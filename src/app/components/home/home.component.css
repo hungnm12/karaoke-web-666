@@ -8,11 +8,13 @@
   background-color: rgb(52, 36, 58);
   display: flex;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 video {
   margin: 7px;
-  height: 72vh;
+  height: 77vh;
   width: 69.6vw;
   object-fit: cover;
 }
