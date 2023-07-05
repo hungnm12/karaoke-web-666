@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 .displaysongs {
     overflow-y: auto;
     overflow-x: hidden;
@@ -31,6 +34,7 @@
     background-color: rgb(52, 36, 58);
     display: flex;
     border: 0px solid rgb(81, 46, 114);
+    position: relative;
 }
 
 .song:hover {
@@ -44,7 +48,17 @@
     width: 7vh;
 }
 
+.image {
+    transition: transform 0.3s;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
+
+
 .info {
+    font-family: 'Lato', sans-serif;
     margin-top: 1vh;
     margin-left: 1vh;
     color: aliceblue;
@@ -52,13 +66,15 @@
 }
 
 .singer {
+    font-family: 'Roboto', sans-serif;
     margin-top: 0.5vh;
-    font-size: 1.7vh;
+    font-size: 1.6vh;
     color: rgb(204, 182, 224);
 }
 
 .time {
+    font-family: 'Roboto', sans-serif;
     margin-top: 0.3vh;
-    font-size: 1.7vh;
+    font-size: 1.6vh;
     color: rgb(204, 182, 224);
 }

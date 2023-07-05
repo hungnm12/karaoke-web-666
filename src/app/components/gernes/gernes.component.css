@@ -1,4 +1,6 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
 .gernes {
   height: 92vh;
@@ -6,11 +8,12 @@
   background-color: rgb(40, 28, 44);
 }
 
-.menu-icon {
+.menu-bar {
+  font-family: 'Ubuntu', sans-serif;
   height: 5vh;
   width: 12vw;
   color: azure;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,12 +22,19 @@
 
 }
 
+#menu-icon {
+  padding-right: 0.8vw;
+  font-size: 3vh;
+  color: rgb(218, 212, 217);
+}
+
 .menu-list {
   height: 12vh;
   width: 12vw;
 }
 
 .menu {
+  font-family: 'Noto Sans KR', sans-serif;
   height: 6vh;
   width: 12vw;
   background-color: rgb(64, 52, 68);
