@@ -1,65 +1,80 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-padding-top: 4rem;
-    scroll-behavior: smooth;
-    list-style: none;
-    text-decoration: none;
-}
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
-    gap: 1.5rem;
-    margin-top: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.displaysongs {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 18vw;
+    height: 92vh;
+    background-color: rgb(52, 36, 58);
 }
 
-.container .box {
+.displaysongs::-webkit-scrollbar {
+    width: 8px;
+}
+
+.displaysongs::-webkit-scrollbar-track {
+    background: #382929;
+}
+
+.displaysongs::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.displaysongs::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.song {
+    margin-top: 1vh;
+    margin-left: 0vh;
+    height: 9vh;
+    width: 17vw;
+    background-color: rgb(52, 36, 58);
+    display: flex;
+    border: 0px solid rgb(81, 46, 114);
     position: relative;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 0.5rem;
-    box-shadow: 2px 2px 10px 4px rgb(14 55 54 /15%);
 }
 
-.container .img {
-    width: 100%;
-    height: 250px;
-    object-fit: contain;
-    object-position: center;
-    padding: 20px;
-    background: #f1f1f1;
-    border-radius: 0.5rem;
+.song:hover {
+    background-color: rgb(24, 12, 36);
 }
-.container .box h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin: 0.5rem 0 0.5rem;
+
+.image {
+    margin-top: 1vh;
+    margin-left: 1vh;
+    height: 7vh;
+    width: 7vh;
 }
-.container .box .content {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+
+.image {
+    transition: transform 0.3s;
 }
-.container .box .content span{
-    padding: 0 1rem;
-    color: #4f772d;
-    background:#bc9667;
-    font-weight: 500;
-    border-radius: 4px;
+
+.image:hover {
+    transform: scale(1.1);
 }
-.container .box .content a{
-    padding: 0 1rem;
-    color: #4f772d;
-    border: 2px solid #4f772d;
-    text-transform: uppercase;
-    border-radius: 4px;
+
+
+.info {
+    font-family: 'Lato', sans-serif;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    color: aliceblue;
+    font-size: 2vh;
 }
-.container .box .content a:hover{
-    background:#4f772d;
-    color: #bc9667;
-    transition: 0.2s all linear;   
+
+.singer {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0.5vh;
+    font-size: 1.6vh;
+    color: rgb(204, 182, 224);
+}
+
+.time {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0.3vh;
+    font-size: 1.6vh;
+    color: rgb(204, 182, 224);
 }
