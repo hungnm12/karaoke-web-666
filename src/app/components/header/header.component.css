@@ -61,7 +61,6 @@ video {
     width: 5vh;
     height: 5vh;
     object-fit: cover;
-    /* Đảm bảo video điền đầy vào phần nội dung */
 }
 
 
