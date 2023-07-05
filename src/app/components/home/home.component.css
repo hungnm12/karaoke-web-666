@@ -10,6 +10,13 @@
   justify-content: center;
 }
 
+video {
+  margin: 7px;
+  height: 72vh;
+  width: 69.6vw;
+  object-fit: cover;
+}
+
 img {
   margin: 7px;
   height: 72vh;

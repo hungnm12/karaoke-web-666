@@ -48,6 +48,23 @@
     }
 }
 
+.video-icon {
+    margin-right: 1vh;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    border: 0px solid rgb(194, 138, 191);
+    overflow: hidden;
+}
+
+video {
+    width: 5vh;
+    height: 5vh;
+    object-fit: cover;
+    /* Đảm bảo video điền đầy vào phần nội dung */
+}
+
+
 .aboutus {
     height: 100%;
     width: 12vw;
