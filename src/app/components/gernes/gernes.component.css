@@ -13,7 +13,7 @@
   height: 5vh;
   width: 12vw;
   color: azure;
-  font-size: 1.5rem;
+  font-size: 4vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,6 +35,7 @@
 
 .menu {
   font-family: 'Noto Sans KR', sans-serif;
+  font-size: 2.5vh;
   height: 6vh;
   width: 12vw;
   background-color: rgb(64, 52, 68);
@@ -42,6 +43,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
 }
 

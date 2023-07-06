@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .center {
   display: flex;
 }
@@ -13,13 +19,17 @@
 .display-nothing {
   height: 0vh;
   width: 88vw;
-  background-color: rgb(40, 28, 44);
+}
+
+#video-background {
+  height: 260vh;
+  position: relative;
+  z-index: -1;
 }
 
 .display-ballad {
   height: 28vh;
   width: 88vw;
-  background-color: rgb(163, 45, 134);
   display: flex;
   flex-direction: column;
 }
@@ -27,7 +37,6 @@
 .display-blue {
   height: 28vh;
   width: 88vw;
-  background-color: rgb(149, 179, 204);
   display: flex;
   flex-direction: column;
 }
@@ -45,20 +54,37 @@
 
 .list {
   display: flex;
+  background-color: rgba(40, 40, 40, 0.6);
 }
 
 .song {
   height: 24vh;
   width: 10vw;
-  background-color: bisque;
+  background-color: rgba(40, 40, 40, 0.6);
   margin-right: 0px;
-  border: 1px solid rebeccapurple;
+  border-left: 1px solid rgb(171, 115, 226);
+  border-top: 1px solid rgb(171, 115, 226);
+  border-bottom: 1px solid rgb(171, 115, 226);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+
+#end-ballad {
+  border-right: 1px solid rgb(171, 115, 226);
+}
+
+#end-blue {
+  border-right: 1px solid rgb(171, 115, 226);
 }
 
 .song:hover {
-  background-color: rgb(133, 34, 95);
+  background-color: aliceblue;
+  color: black;
+}
+
+.song:hover .info {
+  color: black;
 }
 
 .image {
@@ -68,6 +94,14 @@
   margin-left: 1vh;
   margin-top: 1vh;
   margin-bottom: 1vh;
+}
+
+.image {
+  transition: transform 0.3s;
+}
+
+.image:hover {
+  transform: scale(1.05);
 }
 
 .image img {
@@ -81,18 +115,18 @@
   margin-left: 1vh;
   font-family: 'Lato', sans-serif;
   font-size: 2vh;
+  color: aliceblue;
 }
 
 .singer {
   font-family: 'Roboto', sans-serif;
   margin-top: 0.5vh;
   font-size: 1.5vh;
-  color: rgb(49, 0, 41);
+
 }
 
 .time {
   font-family: 'Roboto', sans-serif;
   margin-top: 0.3vh;
   font-size: 1.5vh;
-  color: rgb(49, 0, 41);
 }
