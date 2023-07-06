@@ -17,6 +17,7 @@
 
 video {
   margin: 7px;
+  margin-bottom: 0px;
   height: 77vh;
   width: 69.6vw;
   object-fit: cover;
@@ -24,7 +25,7 @@ video {
 
 .video-info {
   margin: 7px;
-  height: 13vh;
+  height: 7vh;
   width: 69.6vw;
   color: aliceblue;
 }

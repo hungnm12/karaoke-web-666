@@ -11,11 +11,11 @@ export class DisplaysongsComponent {
   songs = [
     {
       id: '1', // Unique identifier for the song
-      title: 'Gap Me Trong Mo',
-      artist: 'Nothing',
-      duration: '9p',
-      imageUrl: '../../../assets/imgs/disc1.jpg',
-      videoUrl: '../../../assets/imgs/videohome2.mp4',
+      title: 'Gặp Mẹ Trong Mơ',
+      artist: 'Thùy Chi',
+      duration: '4p',
+      imageUrl: '../../../assets/imgs/gapmetrongmo.jpg',
+      videoUrl: '../../../assets/imgs/videohome-gapmetrongmo.mp4',
     },
     {
       id: '2',
@@ -35,11 +35,11 @@ export class DisplaysongsComponent {
     },
     {
       id: '4', // Unique identifier for the song
-      title: 'Gap Me Trong Mo',
-      artist: 'Nothing',
-      duration: '9p',
-      imageUrl: '../../../assets/imgs/disc1.jpg',
-      videoUrl: '../../../assets/imgs/videohome2.mp4',
+      title: 'Nàng Kiều Lỡ Bước',
+      artist: 'HKT',
+      duration: '4p',
+      imageUrl: '../../../assets/imgs/nangkieulobuoc.jpg',
+      videoUrl: '../../../assets/imgs/videohome-nangkieulobuocremix.mp4',
     },
     {
       id: '5',
