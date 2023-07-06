@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
 .center {
   display: flex;
 }
@@ -7,6 +9,7 @@
   width: 70vw;
   background-color: rgb(52, 36, 58);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   position: relative;
   overflow: hidden;
@@ -19,8 +22,14 @@ video {
   object-fit: cover;
 }
 
-img {
+.video-info {
   margin: 7px;
-  height: 72vh;
+  height: 13vh;
   width: 69.6vw;
+  color: aliceblue;
+}
+
+.song-name {
+  margin-left: 1vh;
+  font-family: 'Lato', sans-serif;
 }
