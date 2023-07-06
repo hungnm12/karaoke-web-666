@@ -73,7 +73,7 @@ video {
 }
 
 #a-aboutus {
-    font-size: 1.1rem;
+    font-size: 4vh;
     color: rgb(214, 184, 238);
     text-decoration-line: none;
 }
@@ -87,7 +87,7 @@ video {
 }
 
 #a-library {
-    font-size: 1.1rem;
+    font-size: 4vh;
     color: rgb(214, 184, 238);
     text-decoration-line: none;
 }

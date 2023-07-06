@@ -10,17 +10,19 @@
   background-color: rgb(52, 36, 58);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+}
+
+.video-display {
+  height: 77vh;
+  width: 70vw;
 }
 
 video {
-  margin: 7px;
-  margin-bottom: 0px;
   height: 77vh;
   width: 69.6vw;
   object-fit: cover;
+  margin-top: 1vh;
+  margin-left: 0.2vw;
 }
 
 .video-info {
