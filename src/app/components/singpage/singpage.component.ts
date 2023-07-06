@@ -1,36 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { SongService } from 'src/app/song.service';
 @Component({
   selector: 'app-singpage',
   templateUrl: './singpage.component.html',
   styleUrls: ['./singpage.component.css']
 })
 export class SingpageComponent implements OnInit {
-
   selectedSong: any;
+  songs: any[];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private songService: SongService) {
+    this.songs = this.songService.songs;
+  }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      const songId = params.get('id');
-      if (songId) {
-        this.selectedSong = this.getSongById(songId);
-      }
+    this.route.params.subscribe(params => {
+      const songId = params['id'];
+      // Find the selected song using the songId
+      this.selectedSong = this.songs.find(song => song.id === songId);
     });
   }
-
-  getSongById(id: string): any {
-    // Implement your logic to retrieve the selected song based on the ID
-    return {
-      id: '1',
-      title: 'Song 1',
-      artist: 'Artist 1',
-      duration: '3:30',
-      imageUrl: 'path/to/song1-image.jpg',
-      videoUrl: 'path/to/song1-video.mp4',
-    };
-  }
-
 }

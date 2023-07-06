@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'library', component: LibraryComponent},
   {path: 'user', component: UserComponent},
-  {path: 'singpage', component: SingpageComponent},
+  {path: 'singpage/:id', component: SingpageComponent},
  
   {path: 'aboutus', component: AboutusComponent},
   {path: 'recordbutton', component: RecordbuttonComponent},
