@@ -60,17 +60,31 @@ body {
 .song {
   height: 24vh;
   width: 10vw;
-  background-color: rgba(255, 228, 196, 0.9);
+  background-color: rgba(40, 40, 40, 0.6);
   margin-right: 0px;
-  border: 1px solid rebeccapurple;
+  border-left: 1px solid rgb(171, 115, 226);
+  border-top: 1px solid rgb(171, 115, 226);
+  border-bottom: 1px solid rgb(171, 115, 226);
   display: flex;
   flex-direction: column;
   cursor: pointer;
 }
 
+#end-ballad {
+  border-right: 1px solid rgb(171, 115, 226);
+}
+
+#end-blue {
+  border-right: 1px solid rgb(171, 115, 226);
+}
+
 .song:hover {
-  background-color: rgba(133, 34, 95, 0.3);
-  color: aliceblue
+  background-color: aliceblue;
+  color: black;
+}
+
+.song:hover .info {
+  color: black;
 }
 
 .image {
@@ -101,6 +115,7 @@ body {
   margin-left: 1vh;
   font-family: 'Lato', sans-serif;
   font-size: 2vh;
+  color: aliceblue;
 }
 
 .singer {
