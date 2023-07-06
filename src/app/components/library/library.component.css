@@ -60,7 +60,7 @@ body {
 .song {
   height: 24vh;
   width: 10vw;
-  background-color: bisque;
+  background-color: rgba(255, 228, 196, 0.9);
   margin-right: 0px;
   border: 1px solid rebeccapurple;
   display: flex;
@@ -68,7 +68,8 @@ body {
 }
 
 .song:hover {
-  background-color: rgb(133, 34, 95);
+  background-color: rgba(133, 34, 95, 0.3);
+  color: aliceblue
 }
 
 .image {
@@ -78,6 +79,14 @@ body {
   margin-left: 1vh;
   margin-top: 1vh;
   margin-bottom: 1vh;
+}
+
+.image {
+  transition: transform 0.3s;
+}
+
+.image:hover {
+  transform: scale(1.05);
 }
 
 .image img {
@@ -97,12 +106,10 @@ body {
   font-family: 'Roboto', sans-serif;
   margin-top: 0.5vh;
   font-size: 1.5vh;
-  color: rgb(49, 0, 41);
 }
 
 .time {
   font-family: 'Roboto', sans-serif;
   margin-top: 0.3vh;
   font-size: 1.5vh;
-  color: rgb(49, 0, 41);
 }

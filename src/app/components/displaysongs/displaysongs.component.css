@@ -10,7 +10,7 @@
 }
 
 .displaysongs::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
 }
 
 .displaysongs::-webkit-scrollbar-track {
