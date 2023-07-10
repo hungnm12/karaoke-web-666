@@ -13,10 +13,11 @@ import { Observable } from 'rxjs';
     // Implement the methods to interact with the API endpoints
     // For example, createRecording and playRecording methods
 
-    createRecording(file: File): Observable<any> {
+    createRecording(file: File,fileDir: string): Observable<any> {
         const formData: FormData = new FormData();
         formData.append('file', file);
-       
+        formData.append('fileDir', fileDir);
+      
         return this.http.post<any>(`${this.baseUrl}/createRecording`, formData);
       }
 
