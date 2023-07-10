@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
     <div class="header">
         <app-header></app-header>
     </div>
@@ -15,8 +15,7 @@
                     <video id="video-background" autoplay loop muted src="../../../assets/imgs/video4.mp4"></video>
                 </div>
             </div>
-            <!--use displaysong here nha cu long-->
-            <!--<app-displaysongs></app-displaysongs>-->
+        
             <div class="display-ballad">
                 <div class="title">Ballad</div>
                 <div class="list">
@@ -57,4 +56,9 @@
             </div>
         </div>
     </div>
-</body>
+</body> -->
+
+<div *ngFor="let genre of genres">
+    <h2>{{ genre.name }}</h2>
+    <app-displaysongs [songs]="genre.songs"></app-displaysongs>
+  </div>

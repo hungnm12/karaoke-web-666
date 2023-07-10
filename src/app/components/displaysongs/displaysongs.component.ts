@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { SongService } from 'src/app/song.service';
 
@@ -9,7 +9,7 @@ import { SongService } from 'src/app/song.service';
 })
 
 export class DisplaysongsComponent {
-  songs: any[];
+  @Input() songs: any[];
 
   constructor(private router: Router, private songService: SongService) {
     this.songs = this.songService.songs;
