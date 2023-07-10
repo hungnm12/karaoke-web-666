@@ -16,7 +16,7 @@ import { SingpageComponent } from './components/singpage/singpage.component';
 import { DisplaysongsComponent } from './components/displaysongs/displaysongs.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { GernesComponent } from './components/gernes/gernes.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import {MatButtonModule} from '@angular/material/button';
@@ -50,7 +50,8 @@ import { UploadSongComponent } from './upload-song/upload-song.component';
     HttpClientModule,
     FormsModule,
     NgxFileDropModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [
      {

@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 export interface Song1 {
   id: string;
@@ -14,7 +16,7 @@ export interface Song1 {
   providedIn: 'root'
 })
 export class SongService {
-
+  private apiURL = 'http://localhost:8002';
   songs: Song1[] = [
     {
       id: '1',
@@ -37,5 +39,14 @@ export class SongService {
     // Add more songs as needed
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  uploadSong(formData: FormData): Observable<Song1> {
+    const uploadURL = `${this.apiURL}/songs/upload`;
+    return this.http.post<Song1>(uploadURL, formData);
+  }
+
+  getAllSongs(): Observable<Song1[]> {
+    const songsURL = `${this.apiURL}/songs`;
+    return this.http.get<Song1[]>(songsURL);
+  }
 }
