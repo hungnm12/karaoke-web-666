@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,12 +17,15 @@ import { SingpageComponent } from './components/singpage/singpage.component';
 import { DisplaysongsComponent } from './components/displaysongs/displaysongs.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { GernesComponent } from './components/gernes/gernes.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import {MatButtonModule} from '@angular/material/button';
 import { RecordbuttonComponent } from './components/recordbutton/recordbutton.component';
 import { CommonInterceptor } from './Interceptor';
+// import {MatFormFieldModule} from '@angular/material/form-field';
 import { UploadSongComponent } from './upload-song/upload-song.component';
 
 @NgModule({
@@ -51,6 +55,9 @@ import { UploadSongComponent } from './upload-song/upload-song.component';
     FormsModule,
     NgxFileDropModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule
   ],
   providers: [

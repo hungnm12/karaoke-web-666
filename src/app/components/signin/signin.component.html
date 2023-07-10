@@ -3,27 +3,35 @@
     <div class="container">
         <div class="form-box">
             <h1 id="title">Sign In</h1>
-            <form>
-                <div class="input-group">
+            <mat-form-field>
+                
                     <div class="input-field" id="nameField">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Username">
+                        <input type="text" matInput placeholder="Username" [(ngModel)]="email">
                     </div>
+            </mat-form-field>
+            <mat-form-field >
+
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="text" placeholder="Password">
+                        <input type="text" matInput placeholder="Password"  [(ngModel)]="password">
                     </div>
+            </mat-form-field>
+
                     <br>
                     <p>Forgot Password? <a href="#">Click Here!</a></p>
                     <br>
                     <p>Not have account yet! <a routerLink="/signup">Sign Up</a></p>
-                </div>
+                
                 <br>
+            <mat-form-field >
+
                 <div class="btn-field">
-                    <button type="button" id="signinBtn">Sign In</button>
+                    <button type="button" id="signinBtn" (click)="login()">Sign In</button>
                     <a routerLink="/home"></a> 
                 </div>
-            </form>
+            </mat-form-field>
+
         </div>
     </div>
 </body>

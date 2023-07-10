@@ -3,31 +3,45 @@
     <div class="container">
         <div class="form-box">
             <h1 id="title">Sign Up</h1>
-            <form>
                 <div class="input-group">
+            <mat-form-field>
                     <div class="input-field">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Username">
+                        <input type="text" matInput placeholder="Username" [(ngModel)]="fullName">
                     </div>
+            </mat-form-field>
+            <mat-form-field>
                     <div class="input-field">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="text" placeholder="Email">
+                        <input type="text" matInput placeholder="Email" [(ngModel)]="emailAddress">
                     </div>
+            </mat-form-field>
+
+                    <mat-form-field>
                     <div class="input-field">
                         <i class="fa-solid fa-phone"></i>
-                        <input type="tel" placeholder="Phone">
+                        <input type="tel" matInput placeholder="Phone" [(ngModel)]="telephoneNumber">
                     </div>
+            </mat-form-field>
+
+                    <mat-form-field>
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="text" placeholder="Password">
+                        <input type="text"  matInput placeholder="Password" [(ngModel)]="password">
                     </div>
+            </mat-form-field>
+
+
                 </div>
+                <mat-form-field>
+
                 <div class="btn-field">
-                    <button type="button" id="signupBtn">Sign Up</button>
+                    <button mat-button type="button" id="signupBtn" (click)="register()">Sign Up</button>
                 </div>
+            </mat-form-field>
+
                 <br>
                 <p>Already have an account <a routerLink="/signin">Sign In</a></p>
-            </form>
         </div>
     </div>
 </body>
