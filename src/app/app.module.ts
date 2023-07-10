@@ -22,6 +22,7 @@ import { NgxFileDropModule } from 'ngx-file-drop';
 import {MatButtonModule} from '@angular/material/button';
 import { RecordbuttonComponent } from './components/recordbutton/recordbutton.component';
 import { CommonInterceptor } from './Interceptor';
+import { UploadSongComponent } from './upload-song/upload-song.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CommonInterceptor } from './Interceptor';
     GernesComponent,
    
     RecordbuttonComponent,
+         UploadSongComponent,
     
     
   ],

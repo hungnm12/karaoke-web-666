@@ -1,11 +1,21 @@
 import { Injectable } from '@angular/core';
 
+export interface Song1 {
+  id: string;
+  title: string;
+  artist: string;
+  duration: string;
+  imageUrl: string;
+  videoUrl: string;
+  genre: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class SongService {
 
-  songs = [
+  songs: Song1[] = [
     {
       id: '1',
       title: 'Thang tu la loi noi doi cua em',
@@ -13,6 +23,7 @@ export class SongService {
       duration: '5:00',
       imageUrl: '../../../assets/imgs/Áp_phích_phim_Tháng_Tư_là_lời_nói_dối_của_em.jpg',
       videoUrl: '../../../assets/imgs/videohome3.mp4',
+      genre: 'Ballad'
     },
     {
       id: '2',
@@ -21,15 +32,8 @@ export class SongService {
       duration: '4:15',
       imageUrl: '../../../assets/imgs/imgtest.png',
       videoUrl: '../../../assets/imgs/flower666.mp4',
+      genre: 'Pop'
     },
-    // {
-    //   id: '3',
-    //   title: 'Roller Coaster',
-    //   artist: 'NMIXX',
-    //   duration: '2:50',
-    //   imageUrl: '../../../assets/imgs/music_background.jpg',
-    //   videoUrl: '../../../assets/imgs/videohome1.mp4',
-    // }
     // Add more songs as needed
   ];
 
