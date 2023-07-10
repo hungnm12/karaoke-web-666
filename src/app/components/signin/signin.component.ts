@@ -33,7 +33,7 @@ export class SigninComponent {
     } catch (error) {
       alert("The information does not correct")
     }
-  this.router.navigate([''])
+  this.router.navigate(['#home'])
 
   }
 }

@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
     createRecording(file: File): Observable<any> {
         const formData: FormData = new FormData();
         formData.append('file', file);
-      
+       
         return this.http.post<any>(`${this.baseUrl}/createRecording`, formData);
       }
 

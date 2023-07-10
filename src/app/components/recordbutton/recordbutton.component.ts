@@ -4,7 +4,7 @@ import { RecordingService } from './recording.service';
 import * as RecordRTC from 'recordrtc';
 import 'webrtc-adapter';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 @Component({
   selector: 'app-recordbutton',
   templateUrl: './recordbutton.component.html',
@@ -67,15 +67,11 @@ stopRecording() {
     this.audioSource = audioURL;
   });
 }
- async uploadFile(file: File) {
+  uploadFile(file: File): Observable<any>  {
     const formData = new FormData();
-    formData.append('file', file, file.name);
+    formData.append('file', file);
     formData.append('fileDir','save_records')
-    const t = {
-      file:formData,
-      fileDir:'save_records'
-    }
-    this.http.post("http://localhost:8002/api/recordings/createRecording",formData);
+   return this.http.post("http://localhost:8002/api/recordings/createRecording",formData);
     console.log("done")
     // return this.http.post("http://localhost:8002/api/videos/post", formData).toPromise();
   }
