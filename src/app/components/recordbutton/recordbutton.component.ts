@@ -27,41 +27,10 @@ export class RecordbuttonComponent {
   stream: any;
   audioSource: any;
   recording = false;
-  // public onRecord() {
-  //   if (this.recording) {
-  //     this.stopRecording();
-  //     this.recording = false;
-  //   } else {
-  //     this.startRecording();
-  //     this.recording = true;
-  //   }
-  // }
 
-  // public onPlay() {
-  //   const audioUrl = URL.createObjectURL(this.audioBlob);
-  //   const audioElement = new Audio(audioUrl);
-  //   audioElement.play();
-  // }
+  recordUrl:String='';
 
-  // private startRecording() {
-  //   navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
-  //     this.mediaStream = stream;
-  //     this.recordRTC = RecordRTC(stream, {
-  //       type: 'audio',
-  //     });
-  //     this.recordRTC.startRecording();
-  //   });
-  // }
-
-  // private stopRecording() {
-  //   this.recordRTC.stopRecording(() => {
-  //     this.audioBlob = this.recordRTC.getBlob();
-  //     this.mediaStream.getTracks().forEach((track) => track.stop());
-  //   });
-  // }
-  sanitize(url :string){
-    return this.domSanitizer.bypassSecurityTrustUrl(url);
-  }
+  
   getMediaStream() {
     return this._mediaStream.asObservable();
   }
@@ -98,33 +67,32 @@ stopRecording() {
     this.audioSource = audioURL;
   });
 }
-  // stopRecording() {
-  //   if (!this.recorder) {
-  //     return;
-  //   }
-  //   this.recorder.stopRecording(() => {
-  //     this.blob = this.recorder.getBlob();
-  //     this._blob.next(URL.createObjectURL(this.blob));
-  //     this.autio.stopRecording();
-  //     this.recorder.destroy();
-  //     this.autio = null;
-  //     this.recorder = null;
-  //   })
-  // }
-  saveAudio() {
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        console.log(xhr.responseText);
-      }
-    };
-    xhr.open('POST', 'your-audio-saving-endpoint', true);
+ async uploadFile(file: File) {
     const formData = new FormData();
-    formData.append('audio', this.recordRTC.getBlob());
-    xhr.send(formData);
+    formData.append('file', file, file.name);
+    formData.append('fileDir','save_records')
+    const t = {
+      file:formData,
+      fileDir:'save_records'
+    }
+    this.http.post("http://localhost:8002/api/recordings/createRecording",formData);
+    console.log("done")
+    // return this.http.post("http://localhost:8002/api/videos/post", formData).toPromise();
   }
+  async getRecording(id: String){
+    let res =await this.http.post("http://localhost:8002/api/recordings/getRecording",id,{responseType:"text"
+});
+   await res.forEach(element => {
+      var x = JSON.parse(element);
+      this.recordUrl=x['recordUrl']
+    });
+    
+  }
+
   downloadRecording() {
-    RecordRTC.invokeSaveAsDialog(this.blob, `${Date.now()}.webm`);
+    this.uploadFile(this.recordRTC.getBlob())
+    RecordRTC.invokeSaveAsDialog(this.recordRTC.getBlob(), `${Date.now()}.wav`);
+    
   }
 
   clearRecording() {
@@ -133,11 +101,6 @@ stopRecording() {
     this.mediaStream = null;
   }
   async handleRecording() {
-    // @ts-ignore
-    // this.mediaStream = await navigator.mediaDevices.getDisplayMedia({
-    //   audio: true,
-    //   video: true
-    // });
    this.autio= navigator.mediaDevices.getUserMedia({audio:true})
    
     this._mediaStream.next(this.mediaStream);
@@ -147,48 +110,7 @@ stopRecording() {
 
   private mediaRecorder: any;
   private recordedChunks: any[] = [];
-  
-  onRecordButtonClick() {
-    navigator.mediaDevices.getUserMedia({ audio: true })
-      .then((stream) => {
-        this.mediaRecorder = new MediaRecorder(stream);
-  
-        this.mediaRecorder.addEventListener('dataavailable', (event: any) => {
-          this.recordedChunks.push(event.data);
-        });
-  
-        this.mediaRecorder.addEventListener('stop', () => {
-          const blob = new Blob(this.recordedChunks, { type: 'audio/wav' });
-  
-          const formData = new FormData();
-          formData.append('file', blob, 'recorded_audio.wav');
-          formData.append('fileDir','save_records'); // Replace 'your-file-directory' with the desired file directory
-  
-          this.http.post<any>('/createRecording', formData).subscribe(
-            (response) => {
-              console.log('Recording created successfully. ID: ' + response);
-              // Handle success, e.g., display a success message
-            },
-            (error) => {
-              console.error('Failed to create recording:', error);
-              // Handle error, e.g., display an error message
-            }
-          );
-        });
-  
-        this.mediaRecorder.start();
-      })
-      .catch((error) => {
-        console.error('Failed to access user media:', error);
-        // Handle error, e.g., display an error message
-      });
-  }
-  
-  onStopButtonClick() {
-    if (this.mediaRecorder && this.mediaRecorder.state !== 'inactive') {
-      this.mediaRecorder.stop();
-    }
-  } 
+
 }
  
   

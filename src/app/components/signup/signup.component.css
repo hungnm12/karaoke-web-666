@@ -38,7 +38,7 @@
     color: #003366;
     position: relative;
 }
-mat-form-field{
+
 
 
 
@@ -54,21 +54,21 @@ mat-form-field{
     transform: translateX(-50%);
 }
 
-&.input-field{
+.input-field{
     background: #eaeaea;
     margin: 15px 0;
     border-radius: 30px;
     display: flex;
     align-items: center;
 }
-&.input{
+.input{
     width: 100%;
     background: transparent;
     border: 0;
     outline: 0;
     padding: 18px 15px;
 }
-&.input-field i{
+.input-field i{
     margin-left: 15px;
     color: #999;
 }
@@ -89,6 +89,6 @@ mat-form-field{
     cursor: pointer;
 }
 
-&.input-group{
+.input-group{
     height: 280px;
-}}
+}
