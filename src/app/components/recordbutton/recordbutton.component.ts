@@ -1,16 +1,15 @@
 import { Component, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { RecordingService } from './recording.service';
 import * as RecordRTC from 'recordrtc';
 import 'webrtc-adapter';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, catchError } from 'rxjs';
 @Component({
   selector: 'app-recordbutton',
   templateUrl: './recordbutton.component.html',
   styleUrls: ['./recordbutton.component.css']
 })
-@Injectable()
 export class RecordbuttonComponent {
 
   // private mediaStream: MediaStream;
@@ -29,7 +28,7 @@ export class RecordbuttonComponent {
   recording = false;
 
   recordUrl:String='';
-
+  recordingS : RecordingService;
   
   getMediaStream() {
     return this._mediaStream.asObservable();
@@ -38,11 +37,13 @@ export class RecordbuttonComponent {
   getBlob() {
     return this._blob.asObservable();
   }
-  constructor(private http: HttpClient,private domSanitizer:DomSanitizer) { }
+  constructor(private http: HttpClient,recordingService :RecordingService) { 
+    this.recordingS = recordingService;
+  }
 //   startRecording() {
 // this.handleRecording();
 //   }
-startRecording() {
+async startRecording()  {
   this.recording = true;
   const audioConstraints = {
     audio: true,
@@ -58,7 +59,7 @@ startRecording() {
     console.log(error);
   });
 }
-stopRecording() {
+ stopRecording() {
   this.recording = false;
   this.recordRTC.stopRecording(() => {
     this.stream.stop();
@@ -67,26 +68,37 @@ stopRecording() {
     this.audioSource = audioURL;
   });
 }
-  uploadFile(file: File): Observable<any>  {
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('fileDir','save_records')
-   return this.http.post("http://localhost:8002/api/recordings/createRecording",formData);
-    console.log("done")
-    // return this.http.post("http://localhost:8002/api/videos/post", formData).toPromise();
+  // uploadFile(file: File): Observable<any>  {
+  //   const formData = new FormData();
+  //   formData.append('file', file);
+  //   formData.append('fileDir','save_records')
+  //  return this.http.post("http://localhost:8002/api/recordings/createRecording",formData);
+  //   console.log("done")
+  //   // return this.http.post("http://localhost:8002/api/videos/post", formData).toPromise();
+  // }
+   createRecording(): Promise<any>{
+    const formData =new FormData();
+    formData.append('file', this.recordRTC.getBlob());
+    // formData.append('fileDir', 'save_records');
+    // const headers = new HttpHeaders({
+    //   'Accept': 'application/json'
+    // });
+
+    return this.http.post<any>(`http://localhost:8002/api/videos/post`,formData ).toPromise();
   }
-  async getRecording(id: String){
-    let res =await this.http.post("http://localhost:8002/api/recordings/getRecording",id,{responseType:"text"
-});
-   await res.forEach(element => {
-      var x = JSON.parse(element);
-      this.recordUrl=x['recordUrl']
-    });
+   getRecording(id?: String ): Promise<any>{
+    return this.http.post("http://localhost:8002/api/recordings/getRecording",'64abc8492e2b4074dc9e8be8', { responseType: 'text' 
+}).toPromise()
+  //  await res.forEach(element => {
+  //     var x = JSON.parse(element);
+  //     this.recordUrl=x['recordUrl']
+  //   });
     
   }
 
-  downloadRecording() {
-    this.uploadFile(this.recordRTC.getBlob())
+  async downloadRecording() {
+  // await this.createRecording(this.recordRTC.getBlob());
+    // this.createRecording(this.recordRTC.getBlob())
     RecordRTC.invokeSaveAsDialog(this.recordRTC.getBlob(), `${Date.now()}.wav`);
     
   }
