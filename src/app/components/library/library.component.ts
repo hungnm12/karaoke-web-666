@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { SongService, Song1 } from 'src/app/song.service';
+import { SongService, Song } from 'src/app/song.service';
 
 interface Genre {
   name: string;
-  songs: Song1[];
+  songs: Song[];
 }
 @Component({
   selector: 'app-library',
@@ -11,7 +11,7 @@ interface Genre {
   styleUrls: ['./library.component.css']
 })
 export class LibraryComponent implements OnInit {
-  songs: Song1[] = [];
+  songs: Song[] = [];
   genres: Genre[] = [
     { name: 'Pop', songs: [] },
     { name: 'Rap', songs: [] },

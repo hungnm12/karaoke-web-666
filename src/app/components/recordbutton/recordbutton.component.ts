@@ -28,8 +28,8 @@ export class RecordbuttonComponent {
   recording = false;
 
   recordUrl:String='';
-  recordingS : RecordingService;
-  
+
+  recordingService: RecordingService;
   getMediaStream() {
     return this._mediaStream.asObservable();
   }
@@ -37,13 +37,34 @@ export class RecordbuttonComponent {
   getBlob() {
     return this._blob.asObservable();
   }
-  constructor(private http: HttpClient,recordingService :RecordingService) { 
-    this.recordingS = recordingService;
+  constructor(private http: HttpClient,private domSanitizer:DomSanitizer,recordingService: RecordingService) { 
+    this.recordingService = recordingService;
   }
 //   startRecording() {
 // this.handleRecording();
 //   }
-async startRecording()  {
+
+onRecordClick() {
+  const fileInput = document.getElementById('fileInput') as HTMLInputElement;
+  
+  // Check if a file has been selected
+  if (fileInput.files && fileInput.files.length > 0) {
+    // Get the selected file from the file input element
+    const file = fileInput.files[0];
+    // Specify the file directory path
+    const fileDir = './save_records';
+    // Call the createRecording method of the Angular service
+    this.recordingService.createRecording(file, fileDir).subscribe(
+      response => {
+        console.log('Recording created successfully. ID: ' + response);
+      },
+      error => {
+        console.log('Failed to create recording: ' + error);
+      }
+    );
+  } 
+}
+startRecording() {
   this.recording = true;
   const audioConstraints = {
     audio: true,
@@ -68,14 +89,14 @@ async startRecording()  {
     this.audioSource = audioURL;
   });
 }
-  // uploadFile(file: File): Observable<any>  {
-  //   const formData = new FormData();
-  //   formData.append('file', file);
-  //   formData.append('fileDir','save_records')
-  //  return this.http.post("http://localhost:8002/api/recordings/createRecording",formData);
-  //   console.log("done")
-  //   // return this.http.post("http://localhost:8002/api/videos/post", formData).toPromise();
-  // }
+  uploadFile(file: File): Observable<any>  {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('fileDir','save_records')
+   return this.http.post("http://localhost:8002/api/recordings/createRecording",formData);
+    console.log("done")
+    // return this.http.post("http://localhost:8002/api/videos/post", formData).toPromise();
+  }
    createRecording(): Promise<any>{
     const formData =new FormData();
     formData.append('file', this.recordRTC.getBlob());
@@ -96,9 +117,9 @@ async startRecording()  {
     
   }
 
-  async downloadRecording() {
-  // await this.createRecording(this.recordRTC.getBlob());
-    // this.createRecording(this.recordRTC.getBlob())
+  downloadRecording() {
+    
+    this.uploadFile(this.recordRTC.getBlob())
     RecordRTC.invokeSaveAsDialog(this.recordRTC.getBlob(), `${Date.now()}.wav`);
     
   }

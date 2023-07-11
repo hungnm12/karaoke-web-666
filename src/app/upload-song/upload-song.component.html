@@ -1,75 +1,33 @@
-<!-- <form (submit)="onSubmit()">
-    <label for="title">Title:</label>
-    <input type="text" name="title" [(ngModel)]="song.title">
-    <label for="artist">Artist:</label>
-    <input type="text" name="artist" [(ngModel)]="song.artist">
-    <label for="genre">Genre:</label>
-    <input type="text" name="genre" [(ngModel)]="song.genre">
-    <label for="songImage">Song Image:</label>
-    <input type="file" name="songImage" (change)="onSongImageSelected($event)">
-    <label for="songBeat">Song Beat:</label>
-    <input type="file" name="songBeat" (change)="onSongBeatSelected($event)">
-    <label for="songVideo">Song Video:</label>
-    <input type="file" name="songVideo" (change)="onSongVideoSelected($event)">
-    <label for="lyric">Lyric:</label>
-    <input type="file" name="lyric" (change)="onLyricSelected($event)">
-    <button type="submit">Upload Song</button>
-  </form><p>upload-song works!</p> -->
-
-  <div class="container">
-    <h2>Upload Song</h2>
-    <form [formGroup]="songForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" formControlName="title">
-        <div *ngIf="songForm.get('title')?.invalid && (songForm.get('title')?.dirty || songForm.get('title')?.touched)" class="invalid-feedback">
-          <div *ngIf="songForm.get('title')?.errors?.['required']">
-            Title is required.
-          </div>
-        </div>
+<div>
+    <h1>{{ isEditing ? 'Edit' : 'Add' }} Song</h1>
+    <form #songForm="ngForm" (ngSubmit)="submitForm()">
+      <input type="hidden" name="id" [(ngModel)]="song.id" *ngIf="isEditing">
+      <div>
+        <label>Title:</label>
+        <input type="text" name="title" [(ngModel)]="song.title" required>
       </div>
-      <div class="form-group">
-        <label for="artist">Artist</label>
-        <input type="text" class="form-control" id="artist" formControlName="artist">
-        <div *ngIf="songForm.get('artist')?.invalid && (songForm.get('artist')?.dirty || songForm.get('artist')?.touched)" class="invalid-feedback">
-          <div *ngIf="songForm.get('artist')?.errors?.['required']">
-            Artist is required.
-          </div>
-        </div>
+      <div>
+        <label>Artist:</label>
+        <input type="text" name="artist" [(ngModel)]="song.artist" required>
       </div>
-      <div class="form-group">
-        <label for="genre">Genre</label>
-        <input type="text" class="form-control" id="genre" formControlName="genre">
-        <div *ngIf="songForm.get('genre')?.invalid && (songForm.get('genre')?.dirty || songForm.get('genre')?.touched)" class="invalid-feedback">
-          <div *ngIf="songForm.get('genre')?.errors?.['required']">
-            Genre is required.
-          </div>
-        </div>
+      <div>
+        <label>Genre:</label>
+        <input type="text" name="genre" [(ngModel)]="song.genre" required>
       </div>
-      <div class="form-group">
-        <label for="image">Image</label>
-        <div class="custom-file">
-          <input type="file" class="custom-file-input" id="image" (change)="onImageSelect($event)">
-          <label class="custom-file-label" for="image">{{ songForm.get('image')?.value || 'Choose file' }}</label>
-          <div *ngIf="songForm.get('image')?.invalid && (songForm.get('image')?.dirty || songForm.get('image')?.touched)" class="invalid-feedback">
-            <div *ngIf="songForm.get('image')?.errors?.['required']">
-              Image is required.
-            </div>
-          </div>
-        </div>
+      <div>
+        <label>Image:</label>
+        <input type="file" name="image" (change)="onImageSelected($event)" accept="image/*">
       </div>
-      <div class="form-group">
-        <label for="video">Video</label>
-        <div class="custom-file">
-          <input type="file" class="custom-file-input" id="video" (change)="onVideoSelect($event)">
-          <label class="custom-file-label" for="video">{{ songForm.get('video')?.value || 'Choose file' }}</label>
-          <div *ngIf="songForm.get('video')?.invalid && (songForm.get('video')?.dirty || songForm.get('video')?.touched)" class="invalid-feedback">
-            <div *ngIf="songForm.get('video')?.errors?.['required']">
-              Video is required.
-            </div>
-          </div>
-        </div>
+      <div>
+        <label>Video:</label>
+        <input type="file" name="video" (change)="onVideoSelected($event)" accept="video/*">
       </div>
-      <button type="submit" class="btn btn-primary">Upload</button>
+      <div>
+        <button type="submit">{{ isEditing ? 'Update Song' : 'Add Song' }}</button>
+        <button type="button" *ngIf="isEditing" (click)="deleteSong()">Delete Song</button>
+        <button type="button" (click)="cancelForm()">Cancel</button>
+      </div>
     </form>
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
   </div>
