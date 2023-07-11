@@ -30,7 +30,7 @@ export class RecordbuttonComponent {
 
   recordUrl:String='';
 
-  
+  recordingService: RecordingService;
   getMediaStream() {
     return this._mediaStream.asObservable();
   }
@@ -38,10 +38,33 @@ export class RecordbuttonComponent {
   getBlob() {
     return this._blob.asObservable();
   }
-  constructor(private http: HttpClient,private domSanitizer:DomSanitizer) { }
+  constructor(private http: HttpClient,private domSanitizer:DomSanitizer,recordingService: RecordingService) { 
+    this.recordingService = recordingService;
+  }
 //   startRecording() {
 // this.handleRecording();
 //   }
+
+onRecordClick() {
+  const fileInput = document.getElementById('fileInput') as HTMLInputElement;
+  
+  // Check if a file has been selected
+  if (fileInput.files && fileInput.files.length > 0) {
+    // Get the selected file from the file input element
+    const file = fileInput.files[0];
+    // Specify the file directory path
+    const fileDir = './save_records';
+    // Call the createRecording method of the Angular service
+    this.recordingService.createRecording(file, fileDir).subscribe(
+      response => {
+        console.log('Recording created successfully. ID: ' + response);
+      },
+      error => {
+        console.log('Failed to create recording: ' + error);
+      }
+    );
+  } 
+}
 startRecording() {
   this.recording = true;
   const audioConstraints = {
@@ -90,6 +113,7 @@ stopRecording() {
   }
 
   downloadRecording() {
+    
     this.uploadFile(this.recordRTC.getBlob())
     RecordRTC.invokeSaveAsDialog(this.recordRTC.getBlob(), `${Date.now()}.wav`);
     
