@@ -15,7 +15,7 @@ export interface Song {
   providedIn: 'root'
 })
 export class SongService {
-  private apiURL = 'http://localhost:8002';
+  private apiURL = 'http://localhost:8002/api/songs';
   songs: Song[] = [
     {
       id: '1',
