@@ -11,19 +11,34 @@ import { Song, SongService } from 'src/app/song.service';
 })
 
 export class DisplaysongsComponent implements OnInit {
-  @Input() songs: Song[] = [];
+  @Input() 
+  genre: string | null = null;
+  songs: Song[] = [];
 
   constructor(private router: Router, private songService: SongService, ) {
     
   }
 
-
   ngOnInit(): void {
-    this.getAllSongs();
+    if (this.genre) {
+      this.getSongsByGenre();
+    } else {
+      this.getAllSongs();
+    }
   }
 
   getAllSongs(): void {
     this.songService.getAllSongs()
+      .subscribe(songs => {
+        this.songs = songs;
+      });
+  }
+  filterByGenre(songs: Song[]): Song[] {
+    return songs.filter((song) => song.genre === this.genre);
+  }
+  
+  getSongsByGenre(): void {
+    this.songService.getSongsByGenre(this.genre!)
       .subscribe(songs => {
         this.songs = songs;
       });
