@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { SongService } from 'src/app/song.service';
+import { Song, SongService } from 'src/app/song.service';
 @Component({
   selector: 'app-singpage',
   templateUrl: './singpage.component.html',
   styleUrls: ['./singpage.component.css']
 })
 export class SingpageComponent implements OnInit {
-  selectedSong: any;
-  songs: any[];
+  selectedSong: Song | undefined;
 
-  constructor(private route: ActivatedRoute, private songService: SongService) {
-    this.songs = this.songService.songs;
-  }
+  constructor(private route: ActivatedRoute, private songService: SongService) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const songId = params['id'];
-      // Find the selected song using the songId
-      this.selectedSong = this.songs.find(song => song.id === songId);
+      // Call the SongService to get the selected song based on the ID
+      this.songService.getAllSongs().subscribe((songs) => {
+        this.selectedSong = songs.find(song => song.id === songId);
+      });
     });
   }
 }
