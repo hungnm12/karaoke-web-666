@@ -1,33 +1,61 @@
-<div>
-    <h1>{{ isEditing ? 'Edit' : 'Add' }} Song</h1>
-    <form #songForm="ngForm" (ngSubmit)="submitForm()">
-      <input type="hidden" name="id" [(ngModel)]="song.id" *ngIf="isEditing">
-      <div>
-        <label>Title:</label>
-        <input type="text" name="title" [(ngModel)]="song.title" required>
-      </div>
-      <div>
-        <label>Artist:</label>
-        <input type="text" name="artist" [(ngModel)]="song.artist" required>
-      </div>
-      <div>
-        <label>Genre:</label>
-        <input type="text" name="genre" [(ngModel)]="song.genre" required>
-      </div>
-      <div>
-        <label>Image:</label>
-        <input type="file" name="image" (change)="onImageSelected($event)" accept="image/*">
-      </div>
-      <div>
-        <label>Video:</label>
-        <input type="file" name="video" (change)="onVideoSelected($event)" accept="video/*">
-      </div>
-      <div>
-        <button type="submit">{{ isEditing ? 'Update Song' : 'Add Song' }}</button>
-        <button type="button" *ngIf="isEditing" (click)="deleteSong()">Delete Song</button>
-        <button type="button" (click)="cancelForm()">Cancel</button>
-      </div>
-    </form>
-    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
-    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+<div class="video-background">
+  <video autoplay loop muted>
+    <source src="../../../assets/imgs/video4.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="display-all">
+  <div class="home-header">
+    <app-header></app-header>
   </div>
+  <div class="display">
+    <div class="left"></div>
+    <div class="center">
+      <div class="small-center">
+        <div class="header">{{ isEditing ? 'Edit' : '' }}Add Form</div>
+        <form class="add-form" #songForm="ngForm" (ngSubmit)="submitForm()">
+          <input type="hidden" name="id" [(ngModel)]="song.id" *ngIf="isEditing">
+          <div class="info" id="title">
+            <label>Title:</label>
+            <div class="input">
+              <input matInput placeholder="Example: Ngay cua me" type="text" name="title" [(ngModel)]="song.title"
+                required>
+            </div>
+          </div>
+          <div class="info" id="artist">
+            <label>Artist:</label>
+            <div class="input">
+              <input placeholder="Example: Iat" type="text" name="artist" [(ngModel)]="song.artist" required>
+            </div>
+          </div>
+          <div class="info" id="genre">
+            <label>Genre:</label>
+            <div class="input">
+              <input placeholder="Example: Blue" type="text" name="genre" [(ngModel)]="song.genre" required>
+            </div>
+          </div>
+          <div class="info" id="song-image">
+            <label>Image:</label>
+            <div class="input">
+              <input type="file" name="image" (change)="onImageSelected($event)" accept="image/*">
+            </div>
+          </div>
+          <div class="info" id="video">
+            <label>Video:</label>
+            <div class="input">
+              <input type="file" name="video" (change)="onVideoSelected($event)" accept="video/*">
+            </div>
+          </div>
+          <div class="info-button">
+            <button type="submit">{{ isEditing ? 'Update Song' : 'Add Song' }}</button>
+            <button type="button" *ngIf="isEditing" (click)="deleteSong()">Delete Song</button>
+            <button type="button" (click)="cancelForm()">Cancel</button>
+          </div>
+        </form>
+        <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      </div>
+    </div>
+    <div class="right"></div>
+  </div>
+</div>
