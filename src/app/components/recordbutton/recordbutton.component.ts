@@ -100,7 +100,7 @@ startRecording() {
    createRecording(): Promise<any>{
     const formData =new FormData();
     formData.append('file', this.recordRTC.getBlob());
-
+    this.downloadRecording()
     return this.http.post<any>(`http://localhost:8002/api/videos/post`,formData ).toPromise();
   }
    getRecording(id?: String ): Promise<any>{
