@@ -39,6 +39,6 @@ export class SignupComponent {
       alert("The information incorrect or existing");
       console.log(error);
     }
-    this.router.navigate(['singpage'])
+    this.router.navigate(['signin'])
 }
 }
