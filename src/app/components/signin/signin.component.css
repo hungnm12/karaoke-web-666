@@ -82,6 +82,7 @@ form p a{
     width: 100%;
     display: flex;
     padding-left: 110px;
+
 }
 .btn-field button{
     flex-basis: 48%;
@@ -100,4 +101,7 @@ form p a{
 
 p {
     font-weight: bold;
+}
+mat-form-field{
+    width: 306px;
 }

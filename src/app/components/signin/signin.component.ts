@@ -15,7 +15,7 @@ export class SigninComponent {
   public async login(){
     
     const loginData = {
-      email: this.email,
+      emailAddress: this.email,
       password: this.password,
     };
     try {
@@ -33,7 +33,7 @@ export class SigninComponent {
     } catch (error) {
       alert("The information does not correct")
     }
-  this.router.navigate(['#home'])
+  this.router.navigate([''])
 
   }
 }
