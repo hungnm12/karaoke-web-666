@@ -48,7 +48,9 @@
             </form>
         </nav>
         <div class="footer" *ngIf="!isEdit" >
-            <a class="button1" routerLink="/singpage"><span class="btn1">Log out</span></a>
+            <!-- <a class="button1" routerLink="/singpage"><span class="btn1">Log out</span></a> -->
+            <button class="button1" routerLink="/singpage"><span class="btn1" (click)="onLogOut()">Log out</span></button>
+
             <a class="button1"  href="javascript:void(0)" (click)="onEdit()"><span class="btn1">Edit</span></a>
         </div>
         <div class="footer" *ngIf="isEdit">

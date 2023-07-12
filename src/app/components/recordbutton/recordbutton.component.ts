@@ -100,10 +100,6 @@ startRecording() {
    createRecording(): Promise<any>{
     const formData =new FormData();
     formData.append('file', this.recordRTC.getBlob());
-    // formData.append('fileDir', 'save_records');
-    // const headers = new HttpHeaders({
-    //   'Accept': 'application/json'
-    // });
 
     return this.http.post<any>(`http://localhost:8002/api/videos/post`,formData ).toPromise();
   }
@@ -118,7 +114,6 @@ startRecording() {
   }
 
   downloadRecording() {
-    
     this.uploadFile(this.recordRTC.getBlob())
     RecordRTC.invokeSaveAsDialog(this.recordRTC.getBlob(), `${Date.now()}.wav`);
     
