@@ -37,7 +37,17 @@ export interface Song {
         videoUrl: '../../../assets/imgs/flower666.mp4',
         genre: 'Pop'
       },
-      // Add more songs as needed
+      {
+        id: '3',
+        title: 'Thu Cuoi',
+        artist: 'Hang Bing Bong,Mr A, Yanbi',
+        
+        imageUrl: '../../../assets/imgs/thucuoi.jpg',
+        videoUrl: '../../../assets/imgs/videohome-thucuoi.mp4',
+        genre: 'Pop'
+      },
+     
+     
     ];
 
     constructor(private http: HttpClient, private authService: AuthService) { }
