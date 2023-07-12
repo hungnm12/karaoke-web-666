@@ -1,33 +1,29 @@
-<div>
-    <h1>{{ isEditing ? 'Edit' : 'Add' }} Song</h1>
-    <form #songForm="ngForm" (ngSubmit)="submitForm()">
-      <input type="hidden" name="id" [(ngModel)]="song.id" *ngIf="isEditing">
-      <div>
-        <label>Title:</label>
-        <input type="text" name="title" [(ngModel)]="song.title" required>
-      </div>
-      <div>
-        <label>Artist:</label>
-        <input type="text" name="artist" [(ngModel)]="song.artist" required>
-      </div>
-      <div>
-        <label>Genre:</label>
-        <input type="text" name="genre" [(ngModel)]="song.genre" required>
-      </div>
-      <div>
-        <label>Image:</label>
-        <input type="file" name="image" (change)="onImageSelected($event)" accept="image/*">
-      </div>
-      <div>
-        <label>Video:</label>
-        <input type="file" name="video" (change)="onVideoSelected($event)" accept="video/*">
-      </div>
-      <div>
-        <button type="submit">{{ isEditing ? 'Update Song' : 'Add Song' }}</button>
-        <button type="button" *ngIf="isEditing" (click)="deleteSong()">Delete Song</button>
-        <button type="button" (click)="cancelForm()">Cancel</button>
-      </div>
-    </form>
-    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
-    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-  </div>
+<div class="container">
+  <h1>Add Song</h1>
+  <form (ngSubmit)="addSong()" #songForm="ngForm">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" class="form-control" [(ngModel)]="song.title" required>
+    </div>
+    <div class="form-group">
+      <label for="artist">Artist:</label>
+      <input type="text" id="artist" name="artist" class="form-control" [(ngModel)]="song.artist" required>
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre:</label>
+      <input type="text" id="genre" name="genre" class="form-control" [(ngModel)]="song.genre" required>
+    </div>
+    <div class="form-group">
+      <label for="image">Image:</label>
+      <input type="file" id="image" name="image" class="form-control-file" (change)="onImageSelected($event)" required>
+    </div>
+    <div class="form-group">
+      <label for="video">Video:</label>
+      <input type="file" id="video" name="video" class="form-control-file" (change)="onVideoSelected($event)" required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!songForm.valid">Add Song</button>
+    <button type="button" class="btn btn-secondary" (click)="cancelForm()">Cancel</button>
+  </form>
+  <div class="alert alert-success" *ngIf="successMessage">{{successMessage}}</div>
+  <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+</div>
