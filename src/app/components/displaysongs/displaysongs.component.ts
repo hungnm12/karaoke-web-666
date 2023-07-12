@@ -17,15 +17,16 @@ export class DisplaysongsComponent implements OnInit {
     
   }
 
-  // ngOnInit(): void {
-  //   this.songService.getAllSongs().subscribe((songs) => {
-  //     this.songs = songs;
-  //   });
-  // }
+
   ngOnInit(): void {
-    this.songService.getAllSongs().subscribe((songs) => {
-      this.songs = this.songService.songs.concat(songs);
-    });
+    this.getAllSongs();
+  }
+
+  getAllSongs(): void {
+    this.songService.getAllSongs()
+      .subscribe(songs => {
+        this.songs = songs;
+      });
   }
 
   selectSong(song: any): void {

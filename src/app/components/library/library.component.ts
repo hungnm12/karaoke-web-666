@@ -22,13 +22,8 @@ export class LibraryComponent implements OnInit {
   constructor(private songService: SongService) { }
 
   ngOnInit(): void {
-    this.songs = this.songService.songs;
-    this.filterSongsByGenre();
+    
   }
 
-  filterSongsByGenre(): void {
-    this.genres.forEach(genre => {
-      genre.songs = this.songs.filter(song => song.genre === genre.name);
-    });
-  }
+  
 }
