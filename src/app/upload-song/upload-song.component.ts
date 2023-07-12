@@ -41,7 +41,7 @@ export class UploadSongComponent implements OnInit {
   }
 
   addSong(): void {
-    this.songService.addSong(this.imageFile!, this.videoFile!, this.song)
+    this.songService.addSong(this.song, this.imageFile!, this.videoFile!)
       .subscribe(() => {
         this.successMessage = 'Song added successfully';
         this.errorMessage = '';

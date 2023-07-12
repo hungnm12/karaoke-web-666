@@ -13,10 +13,11 @@ interface Genre {
 export class LibraryComponent implements OnInit {
   songs: Song[] = [];
   genres: Genre[] = [
-    { name: 'Pop', songs: [] },
-    { name: 'Rap', songs: [] },
+    
+    { name: 'Ballad', songs: [] },
     { name: 'Blue', songs: [] },
-    { name: 'Ballad', songs: [] }
+    { name: 'Pop', songs: [] },
+    { name: 'Rap', songs: [] }
   ];
   constructor(private songService: SongService) { }
 
