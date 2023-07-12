@@ -71,12 +71,13 @@
 .input-field i{
     margin-left: 15px;
     color: #999;
+    box-sizing: border-box;
 }
 
 .btn-field{
     width: 100%;
     display: flex;
-    padding-left: 110px;
+    padding-left: 56px;
 }
 .btn-field button{
     flex-basis: 48%;
@@ -91,4 +92,21 @@
 
 .input-group{
     height: 280px;
+    margin-bottom: 10px;
+}
+mat-form-field .input-field{
+  
+    padding: 5px;
+}
+
+.input-field input{
+    border: none;
+    background: transparent;
+    margin: 0 10px;
+ 
+}
+
+input{
+    border: none;
+    width: 100%;
 }

@@ -41,7 +41,7 @@ export class UploadSongComponent implements OnInit {
   }
 
   addSong(): void {
-    this.songService.addSong(this.song, this.imageFile!, this.videoFile!)
+    this.songService.createSong(this.song, this.imageFile!, this.videoFile!)
       .subscribe(() => {
         this.successMessage = 'Song added successfully';
         this.errorMessage = '';
@@ -51,35 +51,6 @@ export class UploadSongComponent implements OnInit {
       });
   }
 
-  updateSong(): void {
-    this.songService.updateSong(this.song.id, this.imageFile!, this.videoFile!, this.song)
-      .subscribe(() => {
-        this.successMessage = 'Song updated successfully';
-        this.errorMessage = '';
-      }, (error) => {
-        this.successMessage = '';
-        this.errorMessage = 'Failed to update song';
-      });
-  }
-
-  deleteSong(): void {
-    this.songService.deleteSong(this.song.id)
-      .subscribe(() => {
-        this.successMessage = 'Song deleted successfully';
-        this.errorMessage = '';
-      }, (error) => {
-        this.successMessage = '';
-        this.errorMessage = 'Failed to delete song';
-      });
-  }
-
-  submitForm(): void {
-    if (this.isEditing) {
-      this.updateSong();
-    } else {
-      this.addSong();
-    }
-  }
 
   cancelForm(): void {
     // Reset form data
@@ -97,5 +68,4 @@ export class UploadSongComponent implements OnInit {
     this.successMessage = '';
     this.errorMessage = '';
   }
-  
 }

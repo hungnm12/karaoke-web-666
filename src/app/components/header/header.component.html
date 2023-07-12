@@ -17,8 +17,13 @@
       <a id="user-icon" routerLink="/signin" class="fa-solid fa-user"></a>
     </div>
     <div class="search-box">
-      <input type="text" name="" id="search-input" placeholder="Search...">
-      <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" [(ngModel)]="query" name="" id="search-input" placeholder="Search...">
+      <i id="search-icon" class="fa-solid fa-magnifying-glass" (click)="search()"></i>
+      <div class="search-results" *ngIf="songs.length > 0">
+        <ul>
+          <li *ngFor="let song of songs" (click)="goToSong(song)">{{ song.title }} - {{ song.artist }}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>

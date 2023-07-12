@@ -28,6 +28,7 @@ import { CommonInterceptor } from './Interceptor';
 // import {MatFormFieldModule} from '@angular/material/form-field';
 import { UploadSongComponent } from './upload-song/upload-song.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { UploadSongComponent } from './upload-song/upload-song.component';
    
     RecordbuttonComponent,
          UploadSongComponent,
+         
     
     
   ],
