@@ -1,11 +1,18 @@
-<body class="displaysongs">
+<!-- <body class="displaysongs">
     <div class="song" *ngFor="let song of songs" (click)="selectSong(song)">
         <img class="image" [src]="song.imageUrl" alt="Song Image">
         <div class="info">
             <div class="name">{{ song.title }}</div>
-            <div class="singer">{{ song.artist }}</div>
-            <div class="time">({{ song.duration }})</div>
+            <div class="singer">{{ song.artist }}</div>     
         </div>
     </div>
     
-</body>
+</body> -->
+
+<div class="song" *ngFor="let song of songs" (click)="selectSong(song)">
+    <img class="image" [src]="song.imageUrl" alt="Song Image">
+    <div class="info">
+        <div class="name">{{ song.title }}</div>
+        <div class="singer">{{ song.artist }}</div>     
+    </div>
+</div>
