@@ -14,7 +14,8 @@ export class UserComponent {
   constructor( private router: Router) { } 
 
   onEdit() {
-    this.isEdit = true;
+    this.router.navigate(["upload-song"]);
+    // this.isEdit = true;
   }
 
 

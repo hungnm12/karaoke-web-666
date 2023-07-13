@@ -70,6 +70,7 @@ export class UploadSongComponent implements OnInit {
       .subscribe(() => {
         this.successMessage = 'Song added successfully';
         this.errorMessage = '';
+        this.songService.getAllSongs()
       }, (error) => {
         this.successMessage = '';
         this.errorMessage = 'Failed to add song';
