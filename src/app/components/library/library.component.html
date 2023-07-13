@@ -7,19 +7,26 @@
 <div class="header">
     <app-header></app-header>
 </div>
+<!-- <app-displaysongs> </app-displaysongs> -->
+<section class="Pop" title="sat">
+    <h3 style="color: white; font-size: 24px;">Pop</h3>
 
-<section class="Pop">
+    <div *ngFor="let p of pop" >
+        <img [src]="p.imageUrl" alt="{{ p.title }} cover image" />
+        <div class="name">{{ p.title }}</div>
+        <!-- <div class="singer">{{ song.artist }}</div> -->
+      </div>
     
   </section>
   
   <section class="Rap">
-    
+    <h3 style="color: white; font-size: 24px;">Rap</h3>
   </section>
   
   <section class="Ballad">
-    
+    <h3 style="color: white; font-size: 24px;">Ballad</h3>
   </section>
-  
+  <h3 style="color: white; font-size: 24px;">HipHop</h3>
   <section class="HipHop">
     
   </section>
