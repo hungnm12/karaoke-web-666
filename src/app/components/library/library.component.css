@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+.container {
+  height: 92vh;
+  width: 100vw;
+  background-image: url("../../../assets/imgs/lofi2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 body {
   overflow-x: hidden;
@@ -45,6 +52,7 @@ body {
   width: 100%;
   height: 110%;
 }
+
 /* #video-background {
   height: 260vh;
   position: relative;
