@@ -1,44 +1,77 @@
-<!-- <div class="video-background">
+<div class="video-background">
     <video autoplay loop muted>
         <source src="../../../assets/imgs/video4.mp4" type="video/mp4">
     </video>
-</div> -->
+</div>
 
 <div class="header">
     <app-header></app-header>
 </div>
 <!-- <app-displaysongs> </app-displaysongs> -->
-<section class="Pop" title="sat">
-    <h3 style="color: white; font-size: 24px;">Pop</h3>
+<section class="type" title="sat">
+    <div class="type-header">
+        <h3>Pop</h3>
+    </div>
 
-    <div *ngFor="let p of pop" >
-        <img [src]="p.imageUrl" alt="{{ p.title }} cover image" />
-        <div class="name">{{ p.title }}</div>
-        <!-- <div class="singer">{{ song.artist }}</div> -->
-      </div>
+    <div class="displaysong">
+        <div class="song" *ngFor="let p of pop" >
+            <img class="image" [src]="p.imageUrl" alt="{{ p.title }} cover image" />
+            <div class="info">
+                <div class="name">{{ p.title }}</div>
+            <div class="singer">{{ p.artist }}</div>
+            </div>
+          </div>
+    </div>
     
   </section>
   
-  <section class="Rap">
-    <h3 style="color: white; font-size: 24px;">Rap</h3>
+  <section class="type">
+    <div class="type-header">
+        <h3>Rap</h3>
+    </div>
+    
+    <div class="displaysong">
+        <div class="song" *ngFor="let p of rap" >
+            <<img class="image" [src]="p.imageUrl" alt="{{ p.title }} cover image" />
+            <div class="info">
+                <div class="name">{{ p.title }}</div>
+            <div class="singer">{{ p.artist }}</div>
+            </div>
+            <!-- <div class="singer">{{ song.artist }}</div> -->
+          </div>
+    </div>
   </section>
   
-  <section class="Ballad">
-    <h3 style="color: white; font-size: 24px;">Ballad</h3>
+  <section class="type">
+    <div class="type-header">
+        <h3>Ballad</h3>
+    </div>
+    <div class="displaysong">
+        <div class="song" *ngFor="let p of ballad" >
+            <<img class="image" [src]="p.imageUrl" alt="{{ p.title }} cover image" />
+            <div class="info">
+                <div class="name">{{ p.title }}</div>
+            <div class="singer">{{ p.artist }}</div>
+            </div>
+            <!-- <div class="singer">{{ song.artist }}</div> -->
+          </div>
+    </div>
   </section>
-  <h3 style="color: white; font-size: 24px;">HipHop</h3>
-  <section class="HipHop">
-    
+  
+  <section class="type">
+    <div class="type-header">
+        <h3>HipHop</h3>
+    </div>
+    <div class="displaysong">
+        <div class="song" *ngFor="let p of hiphop" >
+            <<img class="image" [src]="p.imageUrl" alt="{{ p.title }} cover image" />
+            <div class="info">
+                <div class="name">{{ p.title }}</div>
+            <div class="singer">{{ p.artist }}</div>
+            </div>
+            <!-- <div class="singer">{{ song.artist }}</div> -->
+          </div>
+    </div>
   </section>
 
-    <section class="Rap">
 
-    </section>
-
-    <section class="Ballad">
-
-    </section>
-
-    <section class="HipHop">
-
-    </section>

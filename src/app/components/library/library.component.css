@@ -89,25 +89,40 @@ body {
   background-color: rgba(40, 40, 40, 0.6);
 }
 
+.type {
+  height: 29vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.type-header {
+  height: 5vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+
+.type-header h3 {
+  font-size: 3vh;
+  margin-left: 1vh;
+  color: white;
+}
+
+.displaysong {
+  height: 24vh;
+  width: 100vw;
+  display: flex;
+}
 .song {
   height: 24vh;
   width: 10vw;
   background-color: rgba(40, 40, 40, 0.6);
-  margin-right: 0px;
-  border-left: 1px solid rgb(171, 115, 226);
-  border-top: 1px solid rgb(171, 115, 226);
-  border-bottom: 1px solid rgb(171, 115, 226);
+  margin-right: 5px;
+  border: 1px solid rgb(171, 115, 226);
+
   display: flex;
   flex-direction: column;
   cursor: pointer;
-}
-
-#end-ballad {
-  border-right: 1px solid rgb(171, 115, 226);
-}
-
-#end-blue {
-  border-right: 1px solid rgb(171, 115, 226);
 }
 
 .song:hover {
@@ -141,6 +156,10 @@ body {
   width: 12vh;
 }
 
+.name {
+  /* background-color: rgb(255, 255, 255); */
+}
+
 .info {
   height: 10vh;
   width: 9vw;
@@ -150,15 +169,15 @@ body {
   color: aliceblue;
 }
 
-.singer {
+.name {
   font-family: 'Roboto', sans-serif;
   margin-top: 0.5vh;
-  font-size: 1.5vh;
+  font-size: 2vh;
 
 }
 
-.time {
+.singer {
   font-family: 'Roboto', sans-serif;
   margin-top: 0.3vh;
-  font-size: 1.5vh;
+  font-size: 2vh;
 }

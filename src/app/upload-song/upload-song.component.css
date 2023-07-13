@@ -43,19 +43,26 @@
     display: flex;
 }
 
-.left {
-    height: 92vh;
-    width: 30vw;
-}
-
 .right {
     height: 92vh;
-    width: 30vw;
+    width: 75vw;
 }
 
+.right h2 {
+  width: 75vw;
+  height: 3vh;
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table th{
+  width: 10vw;
+}
 .center {
     height: 92vh;
-    width: 40vw;
+    width: 25vw;
     background-color: rgba(138, 43, 226, 0.2);
     display: flex;
     justify-content: center;
@@ -63,10 +70,9 @@
 }
 
 .small-center {
-    height: 80vh;
-    width: 30vw;
+    height: 92vh;
+    width: 25vw;
     background-color: #988cd6;
-    border-radius: 1.7vh;
 }
 
 .header {
@@ -77,13 +83,14 @@
     font-size: 5vh;
     font-family: 'Roboto', sans-serif;
 
+
 }
 
 .add-form {}
 
 .info {
-    height: 10vh;
-    width: 30vw;
+    height: 12vh;
+    width: 25vw;
     background-color: #988cd6;
     display: flex;
     flex-direction: column;
@@ -91,8 +98,9 @@
 }
 
 .info label {
-    height: 4vh;
-    width: 28vw;
+    height: 5vh;
+    width: 24vw;
+    font-size: 3vh;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -102,8 +110,8 @@
 }
 
 .info .input {
-    height: 6vh;
-    width: 28vw;
+    height: 7vh;
+    width: 23vw;
     background-color: #bbb4e9;
     display: flex;
     justify-content: center;
@@ -115,13 +123,13 @@
 
 .info input {
     height: 4vh;
-    width: 26vw;
+    width: 21vw;
     border: 0;
     outline: 0;
     background: rgb(253, 253, 253);
     font-size: 2vh;
     padding-left: 2vh;
-    border-radius: 0.8vh;
+    border-radius: 1vh;
 }
 
 .info input::placeholder {
@@ -129,31 +137,46 @@
 }
 
 .info input[type="file"] {
-    height: 3.7vh;
+    height: 2.9vh;
     background-color: #bbb4e9;
     border-radius: 0px;
-    display: flex;
-    justify-content: center;
+    
 }
 
 .info-button {
     height: 20vh;
-    width: 30vw;
+    width: 25vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     align-items: center;
+
+}
+
+.add {
+  height: 8vh;
+  width: 15vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cancel {
+  height: 8vh;
+  width: 15vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .info-button button {
-    height: 6vh;
-    width: 20vw;
-    background-color: #fff;
-    margin: 1vh;
-    border-radius: 4vh;
-    border: 0px;
-    font-size: 3vh;
-    cursor: pointer;
+  height: 6vh;
+  width: 12vw;
+  font-size: 3.5vh;
+  border: none;
+  border-radius: 3vh;
 }
 
 .info-button button:hover {

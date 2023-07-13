@@ -27,18 +27,23 @@ export class LibraryComponent implements OnInit {
       this.songService.getSongsByGenre(this.genre)
         .subscribe(songs => this.songs = songs);
     } else {
-      this.songService.getAllSongs()
-        .subscribe(songs => this.songs = songs);
+     this.songService.getAllSongs()
+        .subscribe(songs => {
+           this.songs = songs;
+           this.getSongByGenre()
+
+        });
+
     }
-   await this.getSongByGenre()
+
   }
   getSongByGenre(){
-    for(let i = 0; i < this.songs.length; i)
+    for(let i = 0; i < this.songs.length; i++)
     {
       if(this.songs[i].genre.toLowerCase()=="pop")
       {
         this.pop.push(this.songs[i])
-
+        console.log(this.pop)
       }
       else if(this.songs[i].genre.toLowerCase()=="rap")
       {

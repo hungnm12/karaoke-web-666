@@ -9,7 +9,6 @@
     <app-header></app-header>
   </div>
   <div class="display">
-    <div class="left"></div>
     <div class="center">
       <div class="small-center">
         <div class="header">Add Form</div>
@@ -46,17 +45,20 @@
             </div>
           </div>
           <div class="info-button">
-            <button type="submit">{{ isEditing ? 'Update Song' : 'Add Song' }}</button>
-            <button type="button" (click)="cancelForm()">Cancel</button>
+            <div class="add">
+              <button type="submit" (click)="addSong()">{{ isEditing ? 'Update Song' : 'Add Song' }}</button>
+            </div>
+            <div class="cancel">
+              <button type="button" (click)="cancelForm()">Cancel</button>
+            </div>
           </div>
         </form>
         <div class="alert alert-success" *ngIf="successMessage">{{successMessage}}</div>
         <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
       </div>
     </div>
-    <div class="right"></div>
-     <!-- Song list table -->
-  <h2>Songs</h2>
+    <div class="right">
+      <h2>Songs</h2>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -78,5 +80,8 @@
       </tr>
     </tbody>
   </table>
+    </div>
+     <!-- Song list table -->
+  
   </div>
 </div>
