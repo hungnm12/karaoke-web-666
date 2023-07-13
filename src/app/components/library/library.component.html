@@ -1,32 +1,25 @@
-<div class="video-background">
+<!-- <div class="video-background">
     <video autoplay loop muted>
         <source src="../../../assets/imgs/video4.mp4" type="video/mp4">
     </video>
-</div>
+</div> -->
 
 <div class="header">
     <app-header></app-header>
 </div>
-<!-- <app-displaysongs> </app-displaysongs> -->
-<section class="Pop" title="sat">
-    <h3 style="color: white; font-size: 24px;">Pop</h3>
 
-    <div *ngFor="let p of pop" >
-        <img [src]="p.imageUrl" alt="{{ p.title }} cover image" />
-        <div class="name">{{ p.title }}</div>
-        <!-- <div class="singer">{{ song.artist }}</div> -->
-      </div>
-    
+<section class="Pop">
+    <app-displaysongs></app-displaysongs>
   </section>
   
   <section class="Rap">
-    <h3 style="color: white; font-size: 24px;">Rap</h3>
+    
   </section>
   
   <section class="Ballad">
-    <h3 style="color: white; font-size: 24px;">Ballad</h3>
+    
   </section>
-  <h3 style="color: white; font-size: 24px;">HipHop</h3>
+  
   <section class="HipHop">
     
   </section>
