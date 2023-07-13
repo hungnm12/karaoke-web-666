@@ -28,10 +28,35 @@ export class UploadSongComponent implements OnInit {
   videoFile: File | null = null;
   successMessage = '';
   errorMessage = '';
+  songs: Song[] = [];
   constructor( private songService: SongService) { }
 
   ngOnInit(): void {
+    this.songService.getAllSongs()
+    .subscribe((songs) => {
+      this.songs = songs;
+    });
+  
   }
+  deleteSong(id: string): void {
+    if (confirm('Are you sure you want to delete this song?')) {
+      this.songService.deleteSong(id)
+        .subscribe(() => {
+          this.successMessage = 'Song deleted successfully';
+          this.errorMessage = '';
+          this.songs = this.songs.filter((song) => song.id !== id);
+        }, (error) => {
+          this.successMessage = '';
+          this.errorMessage = 'Failed to delete song';
+        });
+    }
+  }
+
+  editSong(song: Song): void {
+    this.isEditing = true;
+    this.song = song;
+  }
+
   onImageSelected(event: any): void {
     this.imageFile = event.target.files[0];
   }

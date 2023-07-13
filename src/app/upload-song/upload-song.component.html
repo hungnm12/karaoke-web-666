@@ -1,8 +1,8 @@
-<div class="video-background">
+<!-- <div class="video-background">
   <video autoplay loop muted>
     <source src="../../../assets/imgs/video4.mp4" type="video/mp4">
   </video>
-</div>
+</div> -->
 
 <div class="display-all">
   <div class="home-header">
@@ -55,5 +55,28 @@
       </div>
     </div>
     <div class="right"></div>
+     <!-- Song list table -->
+  <h2>Songs</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let song of songs">
+        <td>{{song.title}}</td>
+        <td>{{song.artist}}</td>
+        <td><img src="{{song.imageUrl}}" alt="{{song.title}}" height="50"></td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="deleteSong(song.id)">Delete</button>
+          <button type="button" class="btn btn-primary" (click)="editSong(song)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   </div>
 </div>
