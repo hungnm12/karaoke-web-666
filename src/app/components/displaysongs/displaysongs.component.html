@@ -10,7 +10,7 @@
 </body> -->
 
 <div class="song" *ngFor="let song of songs" (click)="selectSong(song)">
-    <img [src]="song.imageUrl" alt="{{ song.title }} cover image" class="song-image" />
+    <img [src]="song.imageUrl" alt="{{ song.title }} cover image" class="song-image"  style="display: block; margin: 0 auto; width: 100%; max-width: 500px; object-fit: contain;" />
     <div class="info">
         <div class="name">{{ song.title }}</div>
         <div class="singer">{{ song.artist }}</div>     
