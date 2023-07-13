@@ -29,6 +29,7 @@ import { CommonInterceptor } from './Interceptor';
 import { UploadSongComponent } from './upload-song/upload-song.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,7 @@ import { UploadSongComponent } from './upload-song/upload-song.component';
    
     RecordbuttonComponent,
          UploadSongComponent,
-         
+        
     
     
   ],
