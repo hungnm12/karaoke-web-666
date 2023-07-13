@@ -12,6 +12,7 @@ import { Observable, Subject, catchError } from 'rxjs';
 })
 export class RecordbuttonComponent {
 
+  scores:String='';
   // private mediaStream: MediaStream;
   // private recordRTC: RecordRTC;
   // private audioBlob: Blob;
@@ -118,7 +119,9 @@ startRecording() {
     RecordRTC.invokeSaveAsDialog(this.recordRTC.getBlob(), `${Date.now()}.wav`);
     
   }
-
+  score() {
+    this.scores = Math.floor(Math.random() * 101).toString();
+  }
   clearRecording() {
     this.blob = null;
     this.recorder = null;
