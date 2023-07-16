@@ -36,16 +36,17 @@
 .menu {
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 2.5vh;
-  height: 6vh;
+  height: auto;
   width: 12vw;
-  background-color: rgb(64, 52, 68);
-  color: rgb(233, 216, 236);
+  /* background-color: rgb(64, 52, 68); */
+  color: rgb(207, 33, 184);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-
+  gap: 2vw;
 }
+
 
 .menu:hover {
   background-color: rgb(183, 131, 207);
