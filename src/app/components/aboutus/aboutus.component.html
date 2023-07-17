@@ -1,100 +1,54 @@
-<body class="video-container">
-    <!-- <div class="video-background">
-        <video autoplay loop muted>
-            <source src="../../../assets/imgs/video4.mp4" type="video/mp4">
-        </video>
-    </div> -->
-    <div class="heading">
-        <app-header></app-header>
-    </div>
-    <div class="container">
-        <div class="box">
-            <div class="image-container">
-                <img class="image" src="../../../assets/imgs/trai.jpg" alt="Ai day nhi">
-            </div>
-            <div class="info-container">
-                <div class="name">
-                    <a href="">Nguyễn Lê Anh</a>
-                </div>
-                <div class="mssv">
-                    <span>20207655</span>
-                    <
-                    
-                </div>
-                <div class="infor">
-                    <span><p><a href="https://github.com/NguyenLeAnh2002">NguyenLeAnh2002</a></p></span>
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="image-container">
-                <img class="image" src="../../../assets/imgs/gai.jpg" alt="Ai day nhi">
-            </div>
-            <div class="info-container">
-                <div class="name">
-                    <a href="">Vo Ngoc Tra My</a>
-                </div>
-                <div class="mssv">
-                    <span>20207692</span>
-                </div>
-                <div class="infor">
-                    <span></span>
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="image-container">
-                <img class="image" src="../../../assets/imgs/trai.jpg" alt="Ai day nhi">
-            </div>
-            <div class="info-container">
-                <div class="name">
-                    <a href="">Nguyễn Mạnh Hùng</a>
-                </div>
-                <div class="mssv">
-                    <span>20207676</span>
-                </div>
-                <div class="infor">
-                    <span> <div>
-                        <a href="https://github.com/hungnm12">Hung.M Nguyen</a>
-                        <!-- <img src="../../../assets/imgs/github_icon.png" alt=""> -->
-              
-                      </div></span>
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="image-container">
-                <img class="image" src="../../../assets/imgs/trai.jpg" alt="Ai day nhi">
-            </div>
-            <div class="info-container">
-                <div class="name">
-                    <a href="">Lê Thành Đạt</a>
-                </div>
-                <div class="mssv">
-                    <span>20207661</span>
-                </div>
-                <div class="infor">
-                    <span>  <a href="https://github.com/lethanhdathust">Dat.T Nguyen</a>
-                        <!-- <img src="assets\image\github_icon.png" alt=""> -->
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="image-container">
-                <img class="image" src="../../../assets/imgs/trai.jpg" alt="Ai day nhi">
-            </div>
-            <div class="info-container">
-                <div class="name">
-                    <a href="">Trần Văn Tài</a>
-                </div>
-                <div class="mssv">
-                    <span>20207700</span>
-                </div>
-                <div class="infor">
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+<app-header></app-header>
+<head>
+    <title>My Portfolio</title>
+    
+  </head>
+  <body>
+    <header>
+      <h1>My Portfolio</h1>
+     
+    </header>
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, my name is Hung</p>
+      </section>
+      <section id="projects">
+        <h2>My Projects</h2>
+        <ul>
+          <li>
+            <h3>Project 1</h3>
+            <p>Task Manage</p>
+            <a href="https://github.com/LongNguyenVu24/IT4883Q_Project_Group5-BE" class="">BE's github link</a>
+            <br>
+            <a href="https://github.com/LongNguyenVu24/IT4883Q_Project_Group5" class="">FE's github link</a>
+          </li>
+          <li>
+            <h3>Project 2</h3>
+            <p>Movie Theatre Seat Booking</p>
+            <a href="https://github.com/hungnm12/web13cinmanage" class="">github link</a>
+          </li>
+          <li>
+            <h3>Project 3</h3>
+            <p>Auto Tunes AI</p>
+            <a href="https://github.com/hungnm12/AI_Autotune" class="">github link</a>
+          </li>
+        </ul>
+      </section>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="submit-form.php" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 John Doe</p>
+    </footer>
+  </body>

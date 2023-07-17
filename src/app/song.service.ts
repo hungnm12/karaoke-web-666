@@ -10,6 +10,8 @@ export interface Song {
   genre: string;
   imageUrl: string ;
   videoUrl: string ;
+  beatUrl: string;
+  lyric: string
   
 }
 
@@ -30,13 +32,15 @@ export interface Song {
       return this.http.get<Song>(`${this.apiURL}/getSong/${id}`);
     }
   
-    createSong(song: Song, imageFile: File, videoFile: File): Observable<Song> {
+    createSong(song: Song, imageFile: File, videoFile: File, beatFile:File, lyricFile: File ): Observable<Song> {
       const formData = new FormData();
       formData.append('title', song.title);
       formData.append('artist', song.artist);
       formData.append('genre', song.genre);
       formData.append('image', imageFile);
       formData.append('video', videoFile);
+      formData.append('beat', beatFile);
+      formData.append('lyric', lyricFile);
       return this.http.post<Song>(`${this.apiURL}/add`, formData);
     }
   

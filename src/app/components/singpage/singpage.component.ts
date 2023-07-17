@@ -9,7 +9,7 @@ import { Song, SongService } from 'src/app/song.service';
 })
 export class SingpageComponent implements OnInit {
   selectedSong: Song | undefined;
-
+  isAudioPlaying = false;
   constructor(private route: ActivatedRoute, private songService: SongService) {}
 
   ngOnInit(): void {
@@ -21,4 +21,13 @@ export class SingpageComponent implements OnInit {
       });
     });
   }
+  toggleAudioPlayback(audioPlayer: HTMLAudioElement): void {
+    if (this.isAudioPlaying) {
+      audioPlayer.pause();
+    } else {
+      audioPlayer.play();
+    }
+    this.isAudioPlaying = !this.isAudioPlaying;
+  }
 }
+

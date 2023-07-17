@@ -14,7 +14,7 @@
           <div class="info" id="title">
             <label>Title:</label>
             <div class="input">
-              <input matInput placeholder="Example: Ngay cua me" type="text" name="title" [(ngModel)]="song.title"
+              <input matInput placeholder="Enter song name here ...." type="text" name="title" [(ngModel)]="song.title"
                 required>
             </div>
           </div>
@@ -40,6 +40,18 @@
             <label>Video:</label>
             <div class="input">
               <input type="file" name="video" (change)="onVideoSelected($event)" required>
+            </div>
+          </div>
+          <div class="info" id="beat">
+            <label>Beat:</label>
+            <div class="input">
+              <input type="file" name="beat" (change)="onBeatSelected($event)" required>
+            </div>
+          </div>
+          <div class="info" id="lyric">
+            <label>Lyrics:</label>
+            <div class="input">
+              <input type="file" name="lyric" (change)="onLyricSelected($event)" required>
             </div>
           </div>
           <div class="info-button">

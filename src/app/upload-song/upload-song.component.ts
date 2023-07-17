@@ -21,11 +21,15 @@ export class UploadSongComponent implements OnInit {
     artist: '',
     imageUrl: '',
     videoUrl: '',
-    genre: ''
+    genre: '',
+    beatUrl: '',
+    lyric: ''
   };
   isEditing = false;
   imageFile: File | null = null;
   videoFile: File | null = null;
+  beatFile: File  | null = null;
+  lyricFile: File | null = null;
   successMessage = '';
   errorMessage = '';
   songs: Song[] = [];
@@ -64,9 +68,16 @@ export class UploadSongComponent implements OnInit {
   onVideoSelected(event: any): void {
     this.videoFile = event.target.files[0];
   }
+  onBeatSelected(event: any) : void {
+    this.beatFile = event.target.files[0];
+  }
+  onLyricSelected(event: any) : void {
+    this.lyricFile  = event.target.files[0];
+  }
+
 
   addSong(): void {
-    this.songService.createSong(this.song, this.imageFile!, this.videoFile!)
+    this.songService.createSong(this.song, this.imageFile!, this.videoFile!, this.beatFile!, this.lyricFile!)
       .subscribe(() => {
         this.successMessage = 'Song added successfully';
         this.errorMessage = '';
@@ -89,7 +100,9 @@ export class UploadSongComponent implements OnInit {
       artist: '',
       imageUrl: '',
       videoUrl: '',
-      genre: ''
+      genre: '',
+      beatUrl: '',
+      lyric: ''
     };
     this.isEditing = false;
     this.imageFile = null;

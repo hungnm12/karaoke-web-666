@@ -11,24 +11,33 @@
 
       <section id="play-song-zone">
         <div class="player">
-         
-          <video class="song-video"  [src]="selectedSong?.videoUrl" controls width="1680" height="1050" ></video>
+
+          <div class="song-image-wrapper">
+            <img [src]="selectedSong?.imageUrl" alt="{{ selectedSong?.title }} cover image" class="song-image"/>
+          </div>
+          <div class="audio-player-wrapper">
+            <audio #audioPlayer [src]="selectedSong?.beatUrl"></audio>
+            <button (click)="toggleAudioPlayback(audioPlayer)" [class.playing]="isAudioPlaying">
+              <i class="fas fa-fw" [ngClass]="{'fa-stop': isAudioPlaying, 'fa-play': !isAudioPlaying}"></i>
+            </button>
+          </div>
+          <div class="lyrics">
+            <h2>{{ selectedSong?.title }}</h2>
+          
+            {{ selectedSong?.lyric }}
+            </div>
+    
+           
+          </div>
+          
 
          
           <app-recordbutton></app-recordbutton>
-        </div>
+       
       </section>
       
 
-      <!-- <div class="lyrics">
-        <h2>Song Title</h2>
-        <div class="lyrics-text">
-          <p>[Verse 1]</p>
-          <p>Lyrics...</p>
-        </div>
-
-       
-      </div> -->
+    
       <app-displaysongs> </app-displaysongs>
     </main>
   </body>

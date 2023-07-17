@@ -231,3 +231,59 @@ img{
   z-index: 2;
   justify-content: space-between center;
 }
+
+.song-image-wrapper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.song-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.audio-player-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+audio {
+  width: 100%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button i {
+  font-size: 30px;
+}
+
+button.playing i.fa-play {
+  display: none;
+}
+
+button.playing i.fa-stop {
+  display: inline-block;
+}
